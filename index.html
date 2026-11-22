@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Persiapan Ujian Kilat Kelas XI - SKI & Bahasa Indonesia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP NAVBAR -->
+  <header class="top-navbar">
+    <div class="nav-brand">
+      <div class="brand-badge">CBT XI</div>
+      <div class="brand-text">
+        <h1>Portal Persiapan Ujian Kelas XI</h1>
+        <p>Ringkasan Materi Kilat & Bank Soal Sesuai Kisi-Kisi</p>
+      </div>
+    </div>
+
+    <div class="nav-actions">
+      <div class="subject-switch">
+        <a href="ski.html" class="subject-btn">🕌 SKI</a>
+        <a href="bahasa-indonesia.html" class="subject-btn">🇮🇩 B. Indonesia</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+
+    <!-- HERO SECTION -->
+    <section class="portal-hero">
+      <div style="display: inline-block; background: #fee2e2; color: #dc2626; padding: 4px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; margin-bottom: 12px;">
+        ⚡ Mode Kilat (Persiapan Ujian 3 Jam Lagi)
+      </div>
+      <h1>Persiapan Ujian Sekolah Kelas XI</h1>
+      <p>
+        Dirancang khusus sesuai kisi-kisi resmi. Ringkasan poin penting to-the-point dan 40 latihan soal interaktif lengkap dengan pembahasan langsung.
+      </p>
+    </section>
+
+    <!-- CARDS PILIHAN MAPEL -->
+    <div class="portal-grid">
+
+      <!-- CARD 1: SKI -->
+      <div class="portal-card">
+        <div>
+          <span class="card-badge-top badge-ski">🕌 Sejarah Kebudayaan Islam</span>
+          <h2>SKI Kelas XI</h2>
+          <p>
+            Mencakup 40 butir kisi-kisi: <strong>Daulah Abbasiyah</strong> (pendiri, peradaban, Baitul Hikmah, ilmuwan), <strong>Daulah Usmani</strong> (Muhammad Al-Fatih, Sulaiman Al-Qanuni), <strong>Daulah Safawi</strong> (Tarekat Safawiyah, Isfahan), dan <strong>Daulah Mughal</strong> (Babur, Akbar, Taj Mahal).
+          </p>
+          <div style="font-size: 0.83rem; color: #64748b; margin-bottom: 20px;">
+            📊 <strong>Bentuk Soal:</strong> 30 Pilihan Ganda (PG) + 10 Benar-Salah (B-S)
+          </div>
+        </div>
+
+        <div class="portal-btn-row">
+          <a href="ski.html" class="portal-btn btn-primary-card">🎯 Latihan Soal Interaktif</a>
+          <a href="ski.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="portal-btn btn-secondary-card">📖 Ringkasan Kilat</a>
+        </div>
+      </div>
+
+      <!-- CARD 2: BAHASA INDONESIA -->
+      <div class="portal-card">
+        <div>
+          <span class="card-badge-top badge-indo">🇮🇩 Bahasa Indonesia</span>
+          <h2>Bahasa Indonesia Kelas XI</h2>
+          <p>
+            Mencakup 40 butir kisi-kisi: <strong>Teks Argumentasi</strong> (ide pokok, kalimat persuasif, data pendukung, gotong royong, mangrove, pangan lokal), <strong>Teks Berita</strong> (struktur lead, kaidah fakta, 5W+1H), dan <strong>Cerpen & Cerpen Sejarah</strong> (watak tokoh, majas, nilai patriotisme).
+          </p>
+          <div style="font-size: 0.83rem; color: #64748b; margin-bottom: 20px;">
+            📊 <strong>Bentuk Soal:</strong> 28 Pilihan Ganda (PG) + 12 Pilihan Ganda Kompleks (PGK)
+          </div>
+        </div>
+
+        <div class="portal-btn-row">
+          <a href="bahasa-indonesia.html" class="portal-btn btn-primary-card">🎯 Latihan Soal Interaktif</a>
+          <a href="bahasa-indonesia.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="portal-btn btn-secondary-card">📖 Ringkasan Kilat</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TIPS BELAJAR CEPAT -->
+    <div style="margin-top: 36px; background: white; border-radius: var(--radius-lg); border: 1px solid var(--border-color); padding: 24px; box-shadow: var(--shadow-sm);">
+      <h3 style="font-size: 1.05rem; margin-bottom: 12px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+        💡 Tips Belajar Kilat 3 Jam Sebelum Masuk Ruang Ujian:
+      </h3>
+      <ol style="padding-left: 20px; font-size: 0.9rem; line-height: 1.7; color: #475569;">
+        <li><strong>Buka tab "Ringkasan Materi Kilat"</strong>: Baca cepat poin-poin tebal (nama tokoh pendiri, tahun berdirinya daulah, karya buku monumental, struktur teks, dan kata kunci penting). Waktu: ~15 menit per mapel.</li>
+        <li><strong>Gunakan mode "Latihan Langsung"</strong>: Begitu kamu memilih jawaban, sistem akan langsung memberi tahu apakah jawabanmu Benar (hijau) atau Salah (merah) beserta alasan pembahasannya.</li>
+        <li><strong>Perhatikan bagian Pilihan Ganda Kompleks (PGK)</strong> di Bahasa Indonesia (Nomor 29-40): Kamu bisa memilih lebih dari satu jawaban yang benar!</li>
+        <li><strong>Cek Tabel Kilat 1-40</strong> di bagian bawah tab ringkasan untuk mengulang kembali hafalan secara kilat sesaat sebelum ujian dimulai.</li>
+      </ol>
+    </div>
+
+  </main>
+
+  <footer style="text-align: center; padding: 30px; font-size: 0.82rem; color: var(--text-muted);">
+    Dibuat khusus untuk persiapan ujian sekolah Kelas XI • Semoga Sukses Ujiannya! 🚀
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,788 @@
+// DATA KISI-KISI & SOAL BAHASA INDONESIA KELAS XI
+const INDO_SUMMARY = {
+  title: "Ringkasan Kilat Bahasa Indonesia Kelas XI (Bahan Ujian Cepat)",
+  sections: [
+    {
+      category: "1. Teks Argumentasi",
+      points: [
+        "**Pengertian & Tujuan**: Teks yang bertujuan membuktikan kebenaran suatu pendapat/tesis dengan mengajukan alasan logis, data faktual, dan bukti konkret agar pembaca yakin dan terpengaruh.",
+        "**Struktur Teks Argumentasi**:",
+        "  1. **Pernyataan Pendapat (Tesis)**: Sudut pandang atau gagasan utama penulis terhadap suatu permasalahan.",
+        "  2. **Argumen (Alasan & Bukti)**: Rangkaian bukti, fakta statistik, rujukan ahli, dan penalaran logis yang mendukung tesis.",
+        "  3. **Penegasan Ulang / Simpulan**: Rangkuman intisari argumen yang memperkokoh pendirian penulis dan sering disertai kalimat anjuran/persuasif.",
+        "**Ciri Kebahasaan Teks Argumentasi**:",
+        "  • Menggunakan konjungsi kausalitas (sebab-akibat): *karena, sebab, oleh karena itu, akibatnya*.",
+        "  • Menggunakan kata kerja mental/opini: *berpendapat, meyakini, menilai, mengasumsikan*.",
+        "  • Menggunakan bahasa persuasif/rekomendatif: *sepatutnya, seyogianya, marilah, hendaknya*.",
+        "  • Kohesi dan koherensi: Paragraf padu yang menghubungkan gagasan pokok dengan kalimat-kalimat penjelas yang relevan.",
+        "**Topik Khusus Kisi-Kisi**:",
+        "  • **Gotong Royong**: Nilai sosial pedesaan yang mempererat tali persaudaraan dan meringankan beban fisik.",
+        "  • **Pelestarian Batik**: Warisan adiluhung yang membutuhkan apresiasi generasi muda dan perlindungan hak cipta.",
+        "  • **Ketahanan Pangan Lokal**: Pemanfaatan diversifikasi pangan lokal (singkong, sagu, ubi, jagung) untuk mengurangi ketergantungan impor beras.",
+        "  • **Hutan Mangrove**: Benteng alami pesisir penahan abrasi dan penyerap karbon biru (*blue carbon*) untuk mitigasi perubahan iklim."
+      ]
+    },
+    {
+      category: "2. Teks Berita",
+      points: [
+        "**Pengertian & Karakteristik**: Teks yang melaporkan peristiwa aktual (baru terjadi), faktual (nyata/berdasarkan fakta), penting, dan menarik bagi masyarakat luas.",
+        "**Unsur Pokok Berita (5W+1H / ADIKSIMBA)**:",
+        "  • **Apa (What)**: Peristiwa apa yang terjadi?",
+        "  • **Di mana (Where)**: Lokasi terjadinya peristiwa.",
+        "  • **Kapan (When)**: Waktu terjadinya peristiwa.",
+        "  • **Siapa (Who)**: Siapa subjek/pelaku/korban/tokoh yang terlibat?",
+        "  • **Mengapa (Why)**: Latar belakang atau alasan penyebab peristiwa terjadi.",
+        "  • **Bagaimana (How)**: Proses, kronologi, atau dampak akhir dari peristiwa tersebut.",
+        "**Struktur Piramida Terbalik Teks Berita**:",
+        "  1. **Judul Berita (Headline)**: Singkat, padat, dan memikat perhatian pembaca.",
+        "  2. **Kepala Berita (Lead)**: Paragraf pembuka paling penting yang merangkum sebagian besar unsur 5W+1H (terutama apa, siapa, di mana, kapan).",
+        "  3. **Tubuh Berita (Body)**: Penjelasan rinci tentang kronologi (bagaimana) dan alasan mendalam (mengapa), serta kutipan pernyataan saksi/narasumber.",
+        "  4. **Ekor Berita (Tail)**: Informasi pelengkap/konteks tambahan yang tidak terlalu berpengaruh bila dipotong.",
+        "**Kaidah Kebahasaan Teks Berita**:",
+        "  • Bahasa baku, lugas, denotatif (makna sebenarnya), dan faktual (menghindari kata bersayap atau tafsiran subjektif).",
+        "  • Kalimat fakta vs kalimat opini: Fakta dapat dibuktikan dengan data/angka/verifikasi lapangan, sedangkan opini adalah persepsi subjektif.",
+        "  • Verba pewarta (*menyatakan, menegaskan, menjelaskan, menuturkan*)."
+      ]
+    },
+    {
+      category: "3. Cerpen & Cerpen Sejarah",
+      points: [
+        "**Unsur Intrinsik Cerpen**:",
+        "  • **Tema**: Gagasan pokok yang menjiwai seluruh alur cerita.",
+        "  • **Tokoh & Penokohan (Watak)**: Karakter tokoh digambarkan melalui metode analitik (langsung dijelaskan pengarang) atau dramatik (melalui tindakan/dialog/perilaku/pikiran tokoh).",
+        "  • **Latar (Setting)**: Latar tempat (di mana), latar waktu (kapan), dan latar suasana (suasana hati/keadaan sekitar: genting, hening, riang).",
+        "  • **Alur (Plot)**: Maju, mundur (flashback), atau campuran.",
+        "  • **Konflik**: Pertentangan tokoh, baik konflik eksternal (tokoh vs tokoh lain / lingkungan) maupun **konflik batin** (pergumulan emosional dalam diri tokoh memilih dua pilihan sulit).",
+        "  • **Sudut Pandang**: Orang pertama (*aku/saya*) atau orang ketiga (*dia/ia/mereka/nama tokoh*).",
+        "  • **Amanat**: Pesan moral atau nilai kebijaksanaan yang dipetik pembaca.",
+        "**Cerpen Sejarah (Karakteristik & Nilai)**:",
+        "  • Menggunakan latar belakang peristiwa sejarah nyata (misal: masa Agresi Militer Belanda, perjuangan kemerdekaan 1945) yang dipadukan dengan tokoh fiksi imajinatif sastrawan.",
+        "  • Memuat **Nilai Sejarah/Patriotisme**: Rasa cinta tanah air, pengorbanan jiwa raga, solidaritas kebangsaan, dan integritas moral.",
+        "  • **Penggunaan Majas**: Sering menggunakan majas *personifikasi* (menginsankan benda mati), *metafora* (perbandingan langsung tanpa kata pembanding), dan *hiperbola* (ungkapan melebih-lebihkan keadaan) untuk memperkuat estetika emosi."
+      ]
+    }
+  ]
+};
+
+const INDO_QUESTIONS = [
+  {
+    id: 1,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Menentukan gagasan utama teks tentang gotong royong",
+    stimulus: "Budaya gotong royong di masyarakat pedesaan masih terjaga dengan baik hingga kini. Ketika ada warga yang membangun rumah atau membersihkan saluran irigasi, puluhan tetangga datang membantu secara sukarela tanpa mengharapkan imbalan materi. Kebersamaan ini tidak hanya mempercepat penyelesaian pekerjaan fisik, tetapi juga mempererat tali persaudaraan antarwarga.",
+    question: "Gagasan utama paragraf tersebut adalah...",
+    options: [
+      { key: "A", text: "Warga pedesaan membangun rumah tanpa imbalan materi." },
+      { key: "B", text: "Pekerjaan fisik cepat selesai jika dikerjakan bersama." },
+      { key: "C", text: "Budaya gotong royong masih terjaga dengan baik di masyarakat pedesaan." },
+      { key: "D", text: "Pembersihan saluran irigasi membutuhkan bantuan puluhan warga." }
+    ],
+    answer: "C",
+    explanation: "Kalimat utama terletak di awal paragraf (paragraf deduktif): 'Budaya gotong royong di masyarakat pedesaan masih terjaga dengan baik hingga kini.' Kalimat-kalimat selanjutnya berfungsi sebagai kalimat penjelas."
+  },
+  {
+    id: 2,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi kalimat argumentasi pendukung pendapat",
+    stimulus: "Pemerintah daerah perlu mempercepat transisi menuju penggunaan energi terbarukan di sektor transportasi publik. Polusi udara akibat emisi gas buang kendaraan berbahan bakar fosil sudah melampaui batas ambang aman kesehatan. Menurut data Dinas Kesehatan, angka penderita infeksi saluran pernapasan akut (ISPA) meningkat sebesar 24% dalam kurun waktu satu tahun terakhir akibat tingginya konsentrasi partikel PM2.5 di udara perkotaan.",
+    question: "Kalimat yang berfungsi sebagai argumen pendukung berbasis data faktual adalah...",
+    options: [
+      { key: "A", text: "Pemerintah daerah perlu mempercepat transisi menuju energi terbarukan di sektor transportasi." },
+      { key: "B", text: "Transportasi publik merupakan sarana mobilitas utama bagi masyarakat perkotaan." },
+      { key: "C", text: "Menurut data Dinas Kesehatan, penderita ISPA meningkat 24% dalam satu tahun terakhir akibat partikel PM2.5." },
+      { key: "D", text: "Masyarakat perkotaan sebaiknya memilih berjalan kaki daripada menaiki kendaraan bermotor." }
+    ],
+    answer: "C",
+    explanation: "Kalimat C memuat argumen yang kuat karena didasarkan pada data faktual dari lembaga resmi (Dinas Kesehatan) serta angka kenaikan 24% untuk memperkuat tesis tentang bahaya polusi udara."
+  },
+  {
+    id: 3,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Menentukan kalimat persuasif yang tepat",
+    stimulus: "Produksi sampah plastik di perkotaan kian hari kian tak terkendali. Sampah plastik membutuhkan waktu ratusan tahun untuk dapat terurai secara alami di tanah. Jika dibiarkan menumpuk di saluran air, bencana banjir tak terelakkan dan ekosistem laut akan rusak akibat mikroplastik. [...]",
+    question: "Kalimat persuasif yang paling tepat untuk melengkapi bagian rumpang paragraf tersebut adalah...",
+    options: [
+      { key: "A", text: "Pabrik plastik harus dikenakan pajak yang berlipat ganda oleh pemerintah." },
+      { key: "B", text: "Oleh karena itu, marilah kita mulai membiasakan diri membawa tas belanja mandiri dan membatasi pemakaian plastik sekali pakai." },
+      { key: "C", text: "Sampah plastik memang menjadi musuh utama bagi kelestarian lingkungan hidup." },
+      { key: "D", text: "Penanganan sampah plastik membutuhkan anggaran daerah yang sangat besar." }
+    ],
+    answer: "B",
+    explanation: "Kalimat persuasif ditandai dengan kata ajakan seperti 'marilah', 'hendaknya', atau 'ayo' yang mengajak pembaca melakukan tindakan nyata mengurangi plastik sekali pakai."
+  },
+  {
+    id: 4,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi pendapat atau tesis penulis",
+    stimulus: "Perkembangan pesat teknologi kecerdasan buatan (Artificial Intelligence) mengharuskan kurikulum pendidikan berbenah. Menghafal teori kini tidak lagi memadai bagi generasi muda, sebab mesin dapat menyajikan data dalam hitungan detik. Keterampilan berpikir kritis, pemecahan masalah yang kompleks, serta integritas etis harus menjadi pilar utama pembelajaran di ruang-ruang kelas.",
+    question: "Pendapat atau tesis yang diajukan oleh penulis dalam teks tersebut adalah...",
+    options: [
+      { key: "A", text: "Teknologi kecerdasan buatan akan segera menggantikan seluruh peran guru di sekolah." },
+      { key: "B", text: "Kurikulum pendidikan harus segera berbenah dengan memprioritaskan keterampilan berpikir kritis dan etis di era AI." },
+      { key: "C", text: "Menghafal teori adalah metode belajar terbaik untuk menghadapi era modern." },
+      { key: "D", text: "Penggunaan komputer dan gawai di ruang kelas harus dibatasi secara ketat." }
+    ],
+    answer: "B",
+    explanation: "Tesis penulis adalah gagasan sentral yang diperjuangkan: kurikulum pendidikan harus berbenah dan memprioritaskan kemampuan berpikir kritis di era pesatnya AI."
+  },
+  {
+    id: 5,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Menentukan kalimat penjelas yang sesuai dengan kalimat utama",
+    stimulus: "Kalimat Utama: 'Diversifikasi konsumsi pangan lokal berbasis umbi-umbian memiliki banyak keunggulan strategis bagi ketahanan nasional.'",
+    question: "Kalimat penjelas yang paling padu dan relevan untuk mendukung kalimat utama tersebut adalah...",
+    options: [
+      { key: "A", text: "Beras impor memiliki rasa yang lebih disukai oleh sebagian besar masyarakat kota." },
+      { key: "B", text: "Selain memiliki kandungan serat dan indeks glikemik rendah, komoditas singkong dan ubi jalar mampu tumbuh subur di lahan kritis tanpa pupuk kimia berlebih." },
+      { key: "C", text: "Harga bahan pokok di pasar tradisional sering mengalami fluktuasi menjelang hari raya." },
+      { key: "D", text: "Pemerintah terus memperluas jaringan irigasi persawahan teknis di luar Pulau Jawa." }
+    ],
+    answer: "B",
+    explanation: "Kalimat B menjelaskan secara langsung keunggulan strategis umbi-umbian (gizi serat, indeks glikemik rendah, dan tahan di lahan kritis) yang mendukung kalimat utama."
+  },
+  {
+    id: 6,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Menentukan simpulan teks tentang pelestarian batik",
+    stimulus: "Batik bukan sekadar selembar kain bermotif hias, melainkan mahakarya adiluhung yang sarat makna filosofis dan identitas jati diri bangsa Indonesia. Pengakuan UNESCO atas batik Indonesia sebagai warisan budaya takbenda semestinya tidak membuat kita berpuas diri. Pasalnya, minat generasi muda untuk mempelajari teknik membatik tulis tradisional semakin menurun drastis, terdesak oleh batik cetak pabrik yang murah.",
+    question: "Simpulan yang paling tepat dari isi kutipan teks argumentasi tersebut adalah...",
+    options: [
+      { key: "A", text: "Batik cetak pabrik harus dilarang peredarannya di seluruh pasar tradisional." },
+      { key: "B", text: "Pengakuan UNESCO sudah cukup membuktikan bahwa batik aman dari kepunahan." },
+      { key: "C", text: "Pelestarian batik tulis warisan leluhur memerlukan regenerasi dan kepedulian nyata generasi muda agar tidak tergerus zaman." },
+      { key: "D", text: "Batik tradisional hanya layak dipakai pada acara-acara kenegaraan resmi." }
+    ],
+    answer: "C",
+    explanation: "Simpulan merangkum tesis pentingnya batik sebagai identitas bangsa dan urgensi regenerasi generasi muda perajin agar warisan adiluhung ini tetap lestari."
+  },
+  {
+    id: 7,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Menyusun kalimat acak menjadi paragraf yang padu",
+    stimulus: "Perhatikan kalimat-kalimat acak berikut:\n(1) Akibatnya, ketergantungan berlebihan pada beras membuat ketahanan pangan kita rentan terhadap krisis cuaca ekstrem.\n(2) Padahal, Indonesia dianugerahi keanekaragaman sumber karbohidrat alternatif seperti sagu, jagung, dan sorgum.\n(3) Saat ini, mayoritas pola konsumsi karbohidrat masyarakat Indonesia masih terpaku pada beras.\n(4) Oleh sebab itu, kampanye diversifikasi pangan lokal harus digencarkan secara masif ke seluruh lapisan masyarakat.",
+    question: "Urutan kalimat yang tepat agar membentuk paragraf argumentasi yang padu dan logis adalah...",
+    options: [
+      { key: "A", text: "(3) - (1) - (2) - (4)" },
+      { key: "B", text: "(2) - (3) - (1) - (4)" },
+      { key: "C", text: "(3) - (2) - (1) - (4)" },
+      { key: "D", text: "(4) - (3) - (2) - (1)" }
+    ],
+    answer: "C",
+    explanation: "Urutan logis: (3) Pernyataan kondisi saat ini (terpaku pada beras) -> (2) Fakta pembanding (potensi pangan alternatif) -> (1) Akibat dari kondisi tersebut -> (4) Kesimpulan rekomendasi/persuasif."
+  },
+  {
+    id: 8,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Menganalisis perbedaan pola penyajian dua teks berita",
+    stimulus: "Teks Berita 1:\nGempa bumi bermagnitudo 5,2 mengguncang wilayah pesisir barat Sumatra Barat pada Senin (15/10) dini hari. Badan Penanggulangan Bencana Daerah melaporkan ratusan warga sempat mengungsi ke bukit.\n\nTeks Berita 2:\nDi Kabupaten Agam, Sumatra Barat, ratusan warga berlarian keluar rumah menuju area perbukitan pada Senin (15/10) dini hari. Hal tersebut dipicu oleh guncangan gempa bumi tektonik berkekuatan 5,2 magnitudo.",
+    question: "Perbedaan pola penyajian (urutan unsur berita) pada pembuka kedua teks berita tersebut adalah...",
+    options: [
+      { key: "A", text: "Teks 1 diawali unsur Apa, sedangkan Teks 2 diawali unsur Di mana." },
+      { key: "B", text: "Teks 1 diawali unsur Kapan, sedangkan Teks 2 diawali unsur Siapa." },
+      { key: "C", text: "Teks 1 diawali unsur Bagaimana, sedangkan Teks 2 diawali unsur Mengapa." },
+      { key: "D", text: "Teks 1 diawali unsur Siapa, sedangkan Teks 2 diawali unsur Kapan." }
+    ],
+    answer: "A",
+    explanation: "Teks 1 diawali dengan 'Gempa bumi bermagnitudo 5,2' (Unsur Apa/Peristiwa). Teks 2 diawali dengan 'Di Kabupaten Agam, Sumatra Barat' (Unsur Di mana/Tempat)."
+  },
+  {
+    id: 9,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Menentukan informasi utama dalam teks berita",
+    stimulus: "Tim robotika siswa madrasah aliyah berhasil menyabet medali emas dalam ajang International Youth Robot Competition (IYRC) yang diselenggarakan di Tokyo, Jepang. Prestasi ini diraih berkat inovasi robot pemadam kebakaran otomatis yang dirancang mandiri menggunakan sensor termal presisi tinggi.",
+    question: "Informasi utama yang disampaikan dalam teks berita di atas adalah...",
+    options: [
+      { key: "A", text: "Penyelenggaraan ajang robotika tahunan di Kota Tokyo, Jepang." },
+      { key: "B", text: "Keberhasilan tim robotika siswa madrasah meraih medali emas di kompetisi internasional Tokyo." },
+      { key: "C", text: "Cara kerja sensor termal presisi tinggi pada robot masa kini." },
+      { key: "D", text: "Tingginya angka kebakaran gedung di berbagai negara berkembang." }
+    ],
+    answer: "B",
+    explanation: "Informasi pokok berita menjawab unsur Apa dan Siapa: Kemenangan tim siswa madrasah meraih medali emas dalam kompetisi robotika internasional di Tokyo."
+  },
+  {
+    id: 10,
+    category: "Cerpen",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi fenomena perubahan sikap tokoh",
+    stimulus: "Selama bertahun-tahun, Pak Sastro dikenal sebagai pemilik toko kelontong yang sangat kikir dan enggan menyapa tetangga. Namun, sejak ia terbaring di rumah sakit dan para pemuda kampung bergiliran menjaga tokonya tanpa pamrih, matanya basah. Keesokan harinya setelah sembuh, ia mendatangi balai desa sambil membawa gerobak berisi sembako gratis untuk para lansia.",
+    question: "Perubahan sikap tokoh Pak Sastro dalam kutipan cerpen tersebut ditunjukkan oleh...",
+    options: [
+      { key: "A", text: "Semula rajin bekerja berubah menjadi malas setelah sakit." },
+      { key: "B", text: "Semula bersikap kikir dan menutup diri berubah menjadi dermawan dan peduli terhadap sesama." },
+      { key: "C", text: "Semula ramah kepada tetangga berubah menjadi penyendiri di rumah sakit." },
+      { key: "D", text: "Semula menyukai pemuda kampung berubah menjadi curiga terhadap mereka." }
+    ],
+    answer: "B",
+    explanation: "Perubahan sikap tampak jelas dari sosok yang semula kikir dan dingin terhadap tetangga, berubah menjadi dermawan yang membagikan sembako cuma-cuma kepada lansia setelah terharu atas ketulusan warga."
+  },
+  {
+    id: 11,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi kalimat fakta dalam berita",
+    stimulus: "Perhatikan kalimat-kalimat berikut:\n(1) Pemerintah Kota meresmikan jembatan layang baru sepanjang 1,2 kilometer pada hari Rabu (12/8).\n(2) Jembatan tersebut diyakini akan mampu memangkas waktu tempuh hingga separuh perjalanan.\n(3) Pembangunan proyek strategis ini menelan anggaran sebesar Rp85 miliar yang bersumber dari APBD.\n(4) Keberadaan jembatan layang ini kemungkinan besar menjadi solusi terbaik mengatasi kemacetan.",
+    question: "Kalimat yang merupakan fakta dalam kutipan berita tersebut ditandai dengan nomor...",
+    options: [
+      { key: "A", text: "(1) dan (2)" },
+      { key: "B", text: "(1) dan (3)" },
+      { key: "C", text: "(2) dan (4)" },
+      { key: "D", text: "(3) dan (4)" }
+    ],
+    answer: "B",
+    explanation: "Kalimat (1) dan (3) adalah fakta objektif dengan data angka dan tanggal pasti. Kalimat (2) ('diyakini') dan (4) ('kemungkinan besar') adalah kalimat opini/dugaan."
+  },
+  {
+    id: 12,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi struktur kepala berita (lead)",
+    stimulus: "Sebanyak lima belas hektare lahan gambut di Kecamatan Siak, Riau, terbakar hebat pada Minggu (20/9) sore akibat cuaca panas ekstrem dan tiupan angin kencang. Tim gabungan Manggala Agni dan TNI-Polri segera dikerahkan ke lokasi untuk memadamkan kobaran api.",
+    question: "Kutipan teks berita di atas menempati bagian struktur berita, yaitu...",
+    options: [
+      { key: "A", text: "Judul Berita (Headline)" },
+      { key: "B", text: "Kepala Berita (Lead)" },
+      { key: "C", text: "Tubuh Berita (Body)" },
+      { key: "D", text: "Ekor Berita (Tail)" }
+    ],
+    answer: "B",
+    explanation: "Paragraf pembuka tersebut berfungsi sebagai Kepala Berita (Lead) karena memuat intisari penting peristiwa yang merangkum unsur apa, di mana, kapan, mengapa, dan siapa."
+  },
+  {
+    id: 13,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Menentukan simpulan isi berita",
+    stimulus: "Dinas Lingkungan Hidup mulai memberlakukan uji emisi berkala bagi seluruh kendaraan bermotor yang melintasi jalan protokol ibu kota. Kendaraan yang tidak lulus uji emisi akan dikenakan sanksi tilang dan disinsentif tarif parkir tertinggi. Kebijakan tegas ini diambil menyusul penurunan kualitas udara kota yang mencapai kategori tidak sehat selama tiga pekan beruntun.",
+    question: "Simpulan yang tepat dari isi teks berita tersebut adalah...",
+    options: [
+      { key: "A", text: "Seluruh kendaraan bermotor dilarang beroperasi di jalan protokol kota." },
+      { key: "B", text: "Pemerintah memberlakukan uji emisi wajib bersanksi tegas guna menekan polusi udara perkotaan yang kian memburuk." },
+      { key: "C", text: "Tarif parkir dinaikkan untuk menambah pendapatan asli daerah." },
+      { key: "D", text: "Masyarakat menolak aturan uji emisi karena dianggap memberatkan." }
+    ],
+    answer: "B",
+    explanation: "Simpulan merangkum peristiwa inti (pemberlakuan uji emisi bersanksi) dan alasan mendasar diterapkannya kebijakan tersebut (mengatasi polusi udara yang memburuk)."
+  },
+  {
+    id: 14,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Menentukan ide pokok teks argumentasi",
+    stimulus: "Pemberian sarapan bergizi seimbang sebelum memulai aktivitas belajar di sekolah memiliki korelasi erat dengan daya tangkap siswa. Nutrisi seperti glukosa kompleks dan protein membantu otak menjaga fokus dalam menyerap materi pelajaran yang rumit. Sebaliknya, anak yang melewatkan sarapan cenderung cepat lelah, mudah mengantuk, dan sulit berkonsentrasi saat guru menerangkan.",
+    question: "Ide pokok paragraf argumentasi di atas adalah...",
+    options: [
+      { key: "A", text: "Pentingnya glukosa dan protein bagi kesehatan tubuh manusia." },
+      { key: "B", text: "Penyebab utama siswa sering mengantuk dan lelah di kelas." },
+      { key: "C", text: "Pengaruh positif sarapan bergizi seimbang terhadap daya konsentrasi belajar siswa." },
+      { key: "D", text: "Metode penyajian materi pelajaran rumit di sekolah modern." }
+    ],
+    answer: "C",
+    explanation: "Ide pokok paragraf berbicara mengenai hubungan erat dan pengaruh positif sarapan bergizi seimbang terhadap fokus dan daya konsentrasi siswa."
+  },
+  {
+    id: 15,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Menentukan isi pokok teks berita",
+    stimulus: "Menteri Kelautan dan Perikanan melepasliarkan 50.000 bibit lobster hasil sitaan penggagalan penyelundupan ilegal di perairan Pantai Pangandaran pada Jumat (18/11). Bibit lobster tersebut dikembalikan ke habitat aslinya guna menjaga keberlanjutan plasma nutfah laut Indonesia.",
+    question: "Isi pokok berita tersebut adalah...",
+    options: [
+      { key: "A", text: "Penangkapan penyelundup benih lobster di Pantai Pangandaran." },
+      { key: "B", text: "Pelepasliaran 50.000 bibit lobster sitaan di Pantai Pangandaran untuk menjaga kelestarian laut." },
+      { key: "C", text: "Kenaikan harga ekspor bibit lobster di pasar mancanegara." },
+      { key: "D", text: "Kunjungan kerja Menteri Kelautan ke kawasan pesisir Jawa Barat." }
+    ],
+    answer: "B",
+    explanation: "Isi pokok berita merangkum peristiwa pelepasliaran puluhan ribu bibit lobster sitaan ke alam liar untuk menjaga kelestarian ekosistem laut."
+  },
+  {
+    id: 16,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi unsur mengapa (why)",
+    stimulus: "Jalan lintas provinsi di kawasan pegunungan terpaksa ditutup total selama tiga hari sejak Selasa (5/3). Penutupan ini dilakukan karena tebing setinggi dua puluh meter mengalami longsor susulan dan menimbun badan jalan dengan material batu besar yang membahayakan pengendara.",
+    question: "Berdasarkan teks berita di atas, unsur 'mengapa' penutupan jalan lintas provinsi dilakukan adalah...",
+    options: [
+      { key: "A", text: "Karena sedang dilakukan proyek pengaspalan jalan rutin tahunan." },
+      { key: "B", text: "Karena adanya aksi unjuk rasa warga yang memblokade akses kendaraan." },
+      { key: "C", text: "Karena tebing setinggi 20 meter longsor dan menimbun badan jalan dengan material berbahaya." },
+      { key: "D", text: "Karena cuaca berkabut tebal yang menghalangi jarak pandang pengendara." }
+    ],
+    answer: "C",
+    explanation: "Unsur mengapa (why) menerangkan penyebab: tebing setinggi 20 meter mengalami longsor dan menimbun jalan dengan batu membahayakan."
+  },
+  {
+    id: 17,
+    category: "Cerpen",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Menentukan tema utama cerpen",
+    stimulus: "Sejak fajar menyingsing hingga azan magrib berkumandang, Mak Inah tekun memilah pelepah mendong di teras rumahnya yang reyot. Jemarinya yang keriput dan sering tertusuk duri tak pernah berhenti menganyam tikar demi membiayai kuliah anak semata wayangnya di kota, agar kelak sang anak tak bernasib menjadi buruh tani miskin sepertinya.",
+    question: "Tema utama kutipan cerpen di atas adalah...",
+    options: [
+      { key: "A", text: "Pengorbanan dan cinta tulus seorang ibu demi masa depan pendidikan anaknya." },
+      { key: "B", text: "Teknik tradisional menganyam tikar mendong di pedesaan." },
+      { key: "C", text: "Persaingan usaha industri kerajinan tikar di era modern." },
+      { key: "D", text: "Kesenjangan gaya hidup antara masyarakat desa dan kota." }
+    ],
+    answer: "A",
+    explanation: "Tema utama menggambarkan kebesaran kasih sayang, kerja keras, dan pengorbanan seorang ibu (Mak Inah) demi cita-cita pendidikan anaknya."
+  },
+  {
+    id: 18,
+    category: "Cerpen",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi watak tokoh berdasarkan tindakan",
+    stimulus: "Hujan turun sangat deras ketika bel istirahat berbunyi. Di sudut koridor sekolah, Dimas melihat seorang adik kelas duduk termenung menatap kotak bekalnya yang terjatuh dan tumpah ke lantai becek. Tanpa banyak bicara, Dimas membuka tasnya, mengeluarkan separuh roti isi yang dibawanya dari rumah, lalu menyodorkannya sambil tersenyum hangat, 'Makanlah ini, kita bisa berbagi.'",
+    question: "Watak tokoh Dimas dalam kutipan cerita tersebut adalah...",
+    options: [
+      { key: "A", text: "Pemberani dan percaya diri" },
+      { key: "B", text: "Peduli, dermawan, dan berempati tinggi" },
+      { key: "C", text: "Sederhana dan pendiam" },
+      { key: "D", text: "Disiplin dan bertanggung jawab" }
+    ],
+    answer: "B",
+    explanation: "Tindakan Dimas yang langsung membagikan bekal makanannya kepada anak yang kehilangan makanan menunjukkan sifat empati, kepedulian sosial, dan dermawan."
+  },
+  {
+    id: 19,
+    category: "Cerpen",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Menentukan amanat dalam kutipan cerpen",
+    stimulus: "Saat membereskan meja perpustakaan sore itu, Arya menemukan sebuah amplop cokelat tebal berisikan uang tunai dalam jumlah besar milik bendahara sekolah yang tertinggal. Bisikan godaan untuk mengambil uang itu sempat terlintas di kepalanya demi melunasi seragam sekolahnya. Namun, ia teringat pesan ayahnya bahwa rezeki haram hanya membawa bencana. Tanpa ragu, ia langsung berlari ke ruang kepala sekolah untuk menyerahkan amplop utuh tersebut.",
+    question: "Amanat yang dapat dipetik dari kutipan cerpen di atas adalah...",
+    options: [
+      { key: "A", text: "Jangan pernah meninggalkan barang berharga di tempat umum." },
+      { key: "B", text: "Tetaplah menjunjung tinggi kejujuran meskipun sedang terhimpit kesulitan ekonomi." },
+      { key: "C", text: "Setiap siswa harus segera melunasi tunggakan uang seragam tepat waktu." },
+      { key: "D", text: "Bantulah pekerjaan penjaga perpustakaan saat jam sekolah berakhir." }
+    ],
+    answer: "B",
+    explanation: "Amanat cerita adalah memegang teguh nilai kejujuran dan integritas moral sekalipun berada dalam keadaan sulit dan penuh godaan."
+  },
+  {
+    id: 20,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Menilai kesesuaian gagasan utama tentang ketahanan pangan lokal",
+    stimulus: "Ketergantungan bangsa kita pada konsumsi beras sebagai satu-satunya makanan pokok telah menciptakan kerentanan pangan. Padahal, setiap daerah di Indonesia memiliki kekayaan pangan karbohidrat lokal yang sangat adaptif terhadap iklim setempat, seperti sagu di Maluku-Papua, jagung di Nusa Tenggara, serta ubi dan singkong di Jawa. Mengoptimalkan konsumsi pangan lokal bukan hanya memperkokoh ketahanan pangan, melainkan juga memberdayakan petani daerah.",
+    question: "Pernyataan yang paling sesuai dengan gagasan utama kutipan teks di atas adalah...",
+    options: [
+      { key: "A", text: "Beras harus sepenuhnya digantikan oleh ubi kayu di seluruh wilayah Indonesia." },
+      { key: "B", text: "Pemanfaatan pangan lokal berbasis potensi daerah krusial untuk mengatasi kerentanan akibat ketergantungan beras." },
+      { key: "C", text: "Masyarakat perkotaan menolak mengonsumsi komoditas sagu dan jagung." },
+      { key: "D", text: "Petani daerah hanya mampu memproduksi beras berkualitas rendah." }
+    ],
+    answer: "B",
+    explanation: "Gagasan utama teks berpusat pada perlunya memperkuat diversifikasi pangan berbasis potensi pangan lokal setiap daerah untuk menanggulangi ketergantungan pada beras."
+  },
+  {
+    id: 21,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Menganalisis kelengkapan unsur siapa dalam berita",
+    stimulus: "Gubernur didampingi Kepala Dinas Kesehatan dan perwakilan Organisasi Kesehatan Dunia (WHO) meresmikan laboratorium riset genomik pertama di wilayah timur Indonesia. Dalam sambutannya, Ketua Tim Peneliti, Prof. Hendra, menyatakan bahwa fasilitas ini dirancang untuk mendeteksi varian virus baru secara cepat.",
+    question: "Pihak-pihak yang menjadi subjek unsur 'siapa' (Who) dalam teks berita tersebut secara lengkap adalah...",
+    options: [
+      { key: "A", text: "Gubernur dan masyarakat umum di wilayah timur Indonesia." },
+      { key: "B", text: "Gubernur, Kepala Dinas Kesehatan, perwakilan WHO, dan Ketua Tim Peneliti (Prof. Hendra)." },
+      { key: "C", text: "Pasien penderita virus dan tenaga medis rumah sakit daerah." },
+      { key: "D", text: "Petugas laboratorium dan kontraktor pembangunan gedung." }
+    ],
+    answer: "B",
+    explanation: "Unsur 'siapa' merujuk pada seluruh tokoh/aktor yang terlibat dalam teks: Gubernur, Kepala Dinas Kesehatan, perwakilan WHO, dan Prof. Hendra."
+  },
+  {
+    id: 22,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi informasi tentang manfaat vitamin D",
+    stimulus: "Sinar matahari pagi merupakan sumber stimulan alami terbaik bagi tubuh manusia untuk memproduksi vitamin D secara mandiri. Vitamin D memegang peranan krusial dalam memfasilitasi penyerapan kalsium dan fosfor di dalam usus, yang sangat esensial untuk menjaga kepadatan tulang serta mencegah osteoporosis. Selain itu, riset imunologi mutakhir membuktikan bahwa kecukupan vitamin D memperkuat respons limfosit T dalam menangkal infeksi virus patogen.",
+    question: "Berdasarkan teks di atas, informasi yang tepat mengenai manfaat vitamin D adalah...",
+    options: [
+      { key: "A", text: "Membantu penyerapan kalsium dan fosfor untuk tulang serta mengoptimalkan sistem imun tubuh." },
+      { key: "B", text: "Menurunkan kebutuhan kalsium harian tubuh secara drastis." },
+      { key: "C", text: "Mencegah paparan sinar ultraviolet berlebih ke lapisan dermis kulit." },
+      { key: "D", text: "Menggantikan peran seluruh nutrisi dan mineral makanan lainnya." }
+    ],
+    answer: "A",
+    explanation: "Teks secara eksplisit menyatakan vitamin D berperan menyerap kalsium & fosfor untuk kepadatan tulang dan menguatkan daya tahan tubuh (imunitas) terhadap infeksi virus."
+  },
+  {
+    id: 23,
+    category: "Cerpen Sejarah",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Menganalisis watak tokoh berdasarkan tindakan",
+    stimulus: "Ketika desing peluru senapan mesin Belanda menghujani parit pertahanan di tepi Kali Jagir pada November 1945, Danu, pemuda berusia delapan belas tahun itu, tidak gentar sedikit pun. Dengan merayap di atas lumpur berbau anyir dan menahan perih luka gores di lengannya, ia terus merangsek maju untuk mengantarkan surat sandi komando kepada pejuang laskar di gardu depan.",
+    question: "Watak tokoh Danu dalam cuplikan cerpen sejarah tersebut adalah...",
+    options: [
+      { key: "A", text: "Pemberani, tangguh, dan rela berkorban demi perjuangan." },
+      { key: "B", text: "Keras kepala dan suka membangkang perintah atasan." },
+      { key: "C", text: "Pendendam dan mudah emosi saat menghadapi lawan." },
+      { key: "D", text: "Penyendiri dan enggan bekerja sama dengan orang lain." }
+    ],
+    answer: "A",
+    explanation: "Tindakan Danu yang merayap di lumpur di bawah desingan peluru musuh demi mengantarkan sandi komando mencerminkan jiwa pemberani, patriotik, dan rela berkorban."
+  },
+  {
+    id: 24,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Menganalisis karakteristik teks argumentasi berdasarkan alasan pendukung",
+    stimulus: "Pemberlakuan kantong plastik berbayar di pasar swalayan terbukti efektif mereduksi timbulan sampah anorganik. Laporan Kementerian Lingkungan Hidup menunjukkan penurunan penggunaan kantong plastik sekali pakai sebesar 30% pada tahun pertama penerapan regulasi tersebut di sepuluh kota besar. Fakta ini menegaskan bahwa instrumen kebijakan ekonomi mampu mengubah perilaku konsumen ke arah yang lebih ramah lingkungan.",
+    question: "Karakteristik teks argumentasi yang menonjol dari kutipan di atas adalah...",
+    options: [
+      { key: "A", text: "Menyajikan khayalan imajinatif untuk menghibur pembaca." },
+      { key: "B", text: "Menjelaskan fakta empiris dan data statistik resmi guna memperkuat kebenaran opini/tesis." },
+      { key: "C", text: "Mendeskripsikan keindahan fisik alam secara detail dan puitis." },
+      { key: "D", text: "Menuturkan urutan peristiwa fiksi melalui dialog antartokoh." }
+    ],
+    answer: "B",
+    explanation: "Ciri khas utama teks argumentasi adalah pembuktian tesis menggunakan argumen logis yang ditopang data empiris/statistik (penurunan 30% dari laporan resmi KLHK)."
+  },
+  {
+    id: 25,
+    category: "Teks Argumentasi",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi alasan logis dalam teks argumentasi",
+    stimulus: "Pembangunan jalur pedestrian (trotoar) yang lebar dan teduh di pusat kota harus menjadi prioritas pemerintah daerah. Ruang pejalan kaki yang aman dan nyaman terbukti mampu memotivasi masyarakat untuk beralih dari penggunaan kendaraan pribadi ke transportasi umum. Dengan berkurangnya volume kendaraan pribadi di jalan raya, kemacetan lalu lintas akan terurai secara bertahap dan emisi karbon perkotaan dapat ditekan.",
+    question: "Alasan logis mengapa penataan trotoar yang nyaman dapat mengurangi kemacetan kota adalah...",
+    options: [
+      { key: "A", text: "Karena trotoar dapat dialihfungsikan sebagai jalur sepeda motor saat jam sibuk." },
+      { key: "B", text: "Karena fasilitas trotoar yang memadai mendorong warga berjalan kaki menuju halte/stasiun transportasi umum sehingga pemakaian mobil/motor pribadi berkurang." },
+      { key: "C", text: "Karena trotoar yang lebar memperindah pemandangan gedung-gedung pencakar langit." },
+      { key: "D", text: "Karena pembangunan trotoar memakan separuh badan jalan kendaraan bermotor." }
+    ],
+    answer: "B",
+    explanation: "Hubungan sebab-akibat logisnya: trotoar yang nyaman -> warga terdorong berjalan kaki mengakses transportasi umum -> kendaraan pribadi di jalan berkurang -> kemacetan terurai."
+  },
+  {
+    id: 26,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C2 (Memahami)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi unsur apa dan siapa dalam berita",
+    stimulus: "Para peneliti muda dari Badan Riset dan Inovasi Nasional (BRIN) berhasil menciptakan prototipe alat penjernih air limbah industri berbasis membran nanokarbon kelapa sawit.",
+    question: "Unsur 'apa' (peristiwa) dan 'siapa' (pelaku) dalam kutipan teks berita tersebut secara berurutan adalah...",
+    options: [
+      { key: "A", text: "Penciptaan membran nanokarbon dan para pemilik industri kelapa sawit." },
+      { key: "B", text: "Penciptaan prototipe alat penjernih air limbah dan para peneliti muda BRIN." },
+      { key: "C", text: "Pencemaran air limbah industri dan masyarakat sekitar pabrik." },
+      { key: "D", text: "Pemberian penghargaan inovasi dan jajaran pejabat kementerian." }
+    ],
+    answer: "B",
+    explanation: "Unsur apa = penciptaan prototipe penjernih air limbah berbahan membran nanokarbon; unsur siapa = para peneliti muda dari BRIN."
+  },
+  {
+    id: 27,
+    category: "Teks Berita",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Menganalisis penggunaan bahasa faktual dan lugas",
+    stimulus: "Bahasa dalam teks berita harus bersifat faktual, denotatif (makna lugas/sebenarnya), serta menghindari penggunaan majas atau kata sifat yang mengandung emosi subjektif berlebihan.",
+    question: "Di antara kalimat-kalimat berikut, manakah kalimat yang memenuhi kaidah bahasa berita paling faktual dan lugas?",
+    options: [
+      { key: "A", text: "Si jago merah dengan beringas melalap puluhan rumah tak berdaya dalam sekejap mata." },
+      { key: "B", text: "Kebakaran menghanguskan 24 unit rumah petak di permukiman padat penduduk RT 04/RW 02 pada pukul 03.15 WIB." },
+      { key: "C", text: "Tragedi memilukan kembali menyayat hati kita semua di pagi yang dingin itu." },
+      { key: "D", text: "Kobaran api menari-nari di udara menyisakan tangisan pilu para korban." }
+    ],
+    answer: "B",
+    explanation: "Kalimat B menggunakan bahasa lugas, denotatif, dan mencantumkan data terukur (24 unit rumah, lokasi spesifik, jam 03.15 WIB) tanpa kiasan sastra/majas seperti 'si jago merah' atau 'menyayat hati'."
+  },
+  {
+    id: 28,
+    category: "Cerpen",
+    type: "PG",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Menganalisis watak tokoh berdasarkan perilakunya",
+    stimulus: "Meskipun telah meraih gelar dokter spesialis terbaik di ibu kota, dr. Farhan selalu menyempatkan diri pulang ke desanya setiap akhir pekan. Di sana, ia menggelar pengobatan gratis di serambi musala tua. Ketika seorang warga hendak mencium tangannya tanda terima kasih, dr. Farhan segera menarik tangannya dengan lembut sambil berkata santun, 'Jangan, Pak. Saya hanya perantara, kesembuhan datangnya murni dari Allah.'",
+    question: "Watak tokoh dr. Farhan berdasarkan perilakunya dalam kutipan cerpen di atas adalah...",
+    options: [
+      { key: "A", text: "Ambisius dan pencari pujian" },
+      { key: "B", text: "Rendah hati, santun, dan berbakti kepada masyarakat" },
+      { key: "C", text: "Tertutup dan pemalu" },
+      { key: "D", text: "Acuh tak acuh terhadap status sosialnya" }
+    ],
+    answer: "B",
+    explanation: "Sikap dr. Farhan yang melayani warga desa secara cuma-cuma dan menolak diagung-agungkan menunjukkan sifat rendah hati (*tawadhu*), berbudi luhur, dan mengabdi."
+  },
+  {
+    id: 29,
+    category: "Teks Argumentasi",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Mengidentifikasi gagasan utama dan informasi pendukung tentang mangrove",
+    stimulus: "Hutan mangrove memiliki peran vital sebagai benteng pertahanan alami di wilayah pesisir nusantara. Akar tunjang bakau yang rapat dan kokoh mampu meredam energi gelombang pasang tsunami serta mencegah abrasi pantai akibat gerusan ombak laut. Tidak hanya itu, ekosistem mangrove diyakini sebagai salah satu penyerap karbon biru (blue carbon) paling efektif di dunia, dengan daya serap karbon hingga lima kali lebih besar dibandingkan hutan tropis daratan. Hutan mangrove juga menjadi tempat pemijahan dan habitat pembibitan alami aneka biota laut seperti ikan, udang, dan kepiting bakau.",
+    question: "Berdasarkan kutipan teks di atas, pilihlah pernyataan-pernyataan yang BENAR mengenai gagasan utama dan informasi pendukung tentang mangrove! (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Gagasan utama paragraf adalah peran vital hutan mangrove sebagai benteng pertahanan alami di pesisir nusantara." },
+      { key: "B", text: "Akar tunjang mangrove mampu meredam energi gelombang laut dan mencegah terjadinya abrasi pantai." },
+      { key: "C", text: "Daya serap karbon hutan mangrove lima kali lebih rendah jika dibandingkan dengan vegetasi hutan tropis daratan." },
+      { key: "D", text: "Ekosistem hutan mangrove berfungsi sebagai habitat pemijahan dan pembibitan aneka biota laut seperti ikan dan kepiting." }
+    ],
+    answer: ["A", "B", "D"],
+    explanation: "Pernyataan A, B, dan D tepat sesuai isi teks. Pernyataan C salah karena teks menyebut daya serap karbon mangrove lima kali lebih besar (bukan lebih rendah) dibanding hutan daratan."
+  },
+  {
+    id: 30,
+    category: "Teks Argumentasi",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Menentukan gagasan pendukung tentang perubahan iklim",
+    stimulus: "Dampak perubahan iklim global kini bukan lagi sekadar ancaman masa depan, melainkan kenyataan pahit yang sedang kita hadapi bersama. Anomali cuaca yang ekstrem memicu kekeringan berkepanjangan di sektor pertanian yang berdampak pada gagal panen massal. Di sisi lain, peningkatan suhu laut menyebabkan pemutihan terumbu karang (coral bleaching) serta mencairnya gletser kutub yang memicu kenaikan permukaan air laut.",
+    question: "Manakah pernyataan di bawah ini yang merupakan gagasan pendukung yang relevan tentang dampak perubahan iklim sesuai teks? (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Kekeringan ekstrem memicu gagal panen massal di sektor pertanian akibat anomali cuaca." },
+      { key: "B", text: "Peningkatan suhu laut mengakibatkan pemutihan terumbu karang (coral bleaching)." },
+      { key: "C", text: "Kenaikan permukaan air laut dipicu oleh mencairnya gletser di wilayah kutub." },
+      { key: "D", text: "Perubahan iklim hanya berdampak pada negara-negara di kawasan kutub utara saja." }
+    ],
+    answer: ["A", "B", "C"],
+    explanation: "Pernyataan A, B, dan C didukung secara eksplisit oleh teks sebagai bukti konkret dampak perubahan iklim. Pernyataan D salah."
+  },
+  {
+    id: 31,
+    category: "Cerpen",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Menganalisis relevansi isi cerita dengan kehidupan sehari-hari",
+    stimulus: "Pak Karto tetap tersenyum ramah meski seharian mangkal di perempatan jalan dan becaknya hanya ditumpangi satu pelanggan. Ia tidak pernah mematok tarif tinggi kepada para pedagang sayur yang menjadi penumpangnya. Ketika sang istri menyajikan sepiring singkong rebus di rumah kontrakan mereka, ia berucap khusyuk, 'Alhamdulillah, rezeki halal hari ini cukup untuk kita berdua. Jangan mengeluh, Bu, kejujuran jauh lebih berharga daripada timbunan harta.'",
+    question: "Nilai-nilai moral dalam kutipan cerpen di atas yang sangat relevan untuk diteladani dalam kehidupan sehari-hari adalah... (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Selalu bersyukur atas berapapun rezeki halal yang diperoleh tanpa mengeluh." },
+      { key: "B", text: "Menjaga kejujuran dan integritas dalam mencari nafkah keluarga." },
+      { key: "C", text: "Memanfaatkan kesulitan orang lain untuk meraup keuntungan pribadi sebanyak-banyaknya." },
+      { key: "D", text: "Tetap bersikap ramah dan menjaga keharmonisan rumah tangga dalam kesederhanaan." }
+    ],
+    answer: ["A", "B", "D"],
+    explanation: "Nilai luhur yang relevan adalah rasa syukur (A), integritas mencari nafkah halal (B), dan sikap ramah serta keharmonisan dalam kesederhanaan (D). Pilihan C bertentangan dengan amanat cerita."
+  },
+  {
+    id: 32,
+    category: "Cerpen",
+    type: "PGK",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi bagian cerita yang menggambarkan watak rendah hati",
+    stimulus: "Perhatikan cuplikan dialog dan narasi berikut:\n(1) 'Bukan karena kepintaran saya proyek jembatan desa ini berhasil, melainkan kerja keras seluruh warga yang bergotong royong,' ucap insinyur muda itu di depan kepala desa.\n(2) Saat diberi amplop tanda terima kasih dari dana swadaya warga, ia dengan sopan menolaknya dan meminta dana itu dibelikan semen tambahan.\n(3) Ia sering memamerkan piagam penghargaan dari universitas luar negeri di media sosial pribadinya.\n(4) Ia duduk bersila di atas tikar pandan bersama warga desa sambil menikmati teh hangat tanpa merasa risi.",
+    question: "Bagian nomor berapakah yang secara tepat menggambarkan watak tokoh yang rendah hati? (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Kutipan nomor (1)" },
+      { key: "B", text: "Kutipan nomor (2)" },
+      { key: "C", text: "Kutipan nomor (3)" },
+      { key: "D", text: "Kutipan nomor (4)" }
+    ],
+    answer: ["A", "B", "D"],
+    explanation: "Nomor (1), (2), dan (4) mencerminkan sifat rendah hati (mengakui peran orang lain, menolak imbalan untuk kepentingan umum, bersahaja membaur dengan warga). Nomor (3) mencerminkan sifat menyombongkan diri."
+  },
+  {
+    id: 33,
+    category: "Teks Argumentasi",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Mengidentifikasi pernyataan argumentasi dalam teks",
+    stimulus: "Pendidikan vokasi harus diperkuat untuk menjawab tingginya angka pengangguran usia muda. Data BPS menunjukkan bahwa 32% lulusan belum memiliki keterampilan yang sesuai dengan kebutuhan dunia industri. Kurikulum yang terlalu teoritis tanpa diimbangi praktik lapangan menyebabkan lulusan gagap menghadapi teknologi industri modern. Oleh karena itu, kolaborasi langsung antara sekolah vokasi dan dunia industri adalah langkah imperatif yang mendesak diterapkan.",
+    question: "Manakah di antara kalimat berikut yang tergolong sebagai kalimat argumen (alasan/bukti logis yang mendukung tesis)? (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Data BPS menunjukkan bahwa 32% lulusan belum memiliki keterampilan yang sesuai dengan kebutuhan industri." },
+      { key: "B", text: "Kurikulum yang terlalu teoritis tanpa praktik kerja menyebabkan lulusan gagap teknologi industri modern." },
+      { key: "C", text: "Pendidikan vokasi harus diperkuat untuk menjawab tingginya angka pengangguran muda." },
+      { key: "D", text: "Sekolah vokasi adalah satu-satunya institusi pendidikan formal di Indonesia." }
+    ],
+    answer: ["A", "B"],
+    explanation: "Kalimat A (data statistik) dan B (analisis kausal kurikulum teoritis) merupakan argumen pendukung. Kalimat C adalah tesis/pendapat awal, sedangkan D adalah pernyataan faktual yang keliru."
+  },
+  {
+    id: 34,
+    category: "Teks Argumentasi",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Mengidentifikasi pendapat utama penulis tentang perubahan iklim",
+    stimulus: "Krisis iklim bukan hanya urusan negosiasi diplomatik para pemimpin di konferensi global, melainkan tanggung jawab moral kolektif setiap individu. Mengurangi penggunaan kendaraan bermotor pribadi dan meminimalkan sampah rumah tangga adalah aksi nyata yang dapat dilakukan oleh setiap keluarga. Tanpa adanya kesadaran akar rumput untuk mengubah gaya hidup konsumtif, target penurunan emisi karbon dunia mustahil tercapai.",
+    question: "Pilihlah poin-poin yang mencerminkan pendapat atau pandangan utama penulis dalam teks di atas! (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Krisis iklim merupakan tanggung jawab moral bersama setiap individu di tingkat akar rumput." },
+      { key: "B", text: "Aksi nyata mitigasi iklim dapat dimulai dari lingkup keluarga seperti membatasi kendaraan pribadi dan sampah." },
+      { key: "C", text: "Perubahan gaya hidup masyarakat sangat penting untuk mencapai target penurunan emisi global." },
+      { key: "D", text: "Masyarakat umum tidak perlu peduli karena urusan iklim sepenuhnya beban para diplomat." }
+    ],
+    answer: ["A", "B", "C"],
+    explanation: "Pernyataan A, B, dan C merefleksikan pendapat inti penulis mengenai pentingnya aksi individu dan keluarga dalam mengatasi krisis iklim. Pernyataan D bertolak belakang dengan isi teks."
+  },
+  {
+    id: 35,
+    category: "Teks Berita",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Mengidentifikasi informasi aktual dan akurat dalam berita",
+    stimulus: "Kementerian Perhubungan mengumumkan bahwa Kereta Cepat Whoosh telah mengangkut lebih dari 5 juta penumpang sejak resmi beroperasi secara komersial pada Oktober 2023 hingga September 2024. Tingkat keterisian kursi (okupansi) rata-rata mencapai 80% pada hari kerja dan melonjak hingga 98% saat akhir pekan. Pihak operator juga mencatat ketepatan waktu keberangkatan dan kedatangan kereta mencapai 99,6%.",
+    question: "Pilihlah informasi yang tergolong aktual dan akurat berdasarkan fakta data angka pada kutipan berita tersebut! (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Kereta Cepat Whoosh telah mengangkut lebih dari 5 juta penumpang dalam kurun waktu satu tahun pengoperasian." },
+      { key: "B", text: "Tingkat okupansi kursi rata-rata mencapai 80% pada hari kerja dan mencapai 98% pada akhir pekan." },
+      { key: "C", text: "Ketepatan waktu perjalanan kereta cepat Whoosh tercatat mencapai 99,6%." },
+      { key: "D", text: "Seluruh tiket kereta cepat Whoosh selalu dibagikan secara gratis kepada seluruh warga Jawa Barat." }
+    ],
+    answer: ["A", "B", "C"],
+    explanation: "Pernyataan A, B, dan C memuat data angka faktual dan akurat yang tercantum dalam teks berita resmi Kemenhub. Pernyataan D salah."
+  },
+  {
+    id: 36,
+    category: "Cerpen Sejarah",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Menganalisis konflik batin tokoh dalam cerita sejarah",
+    stimulus: "Surat panggilan darurat dari markas komando gerilya telah terselip di saku baju Sersan Wahyu. Fajar ini pasukannya harus segera menyusup ke wilayah perbukitan Ambarawa. Namun, di pembaringan bilik bambu, istrinya terbaring lemah diterpa demam tinggi sambil mendekap bayi mereka yang baru berusia tiga hari. Hatinya terbelah antara naluri melindungi anak istri tercinta dan panggilan suci mempertahankan kemerdekaan republik dari cengkeraman serdadu Sekutu.",
+    question: "Pilihlah pernyataan yang menggambarkan analisis konflik batin tokoh Sersan Wahyu dalam kutipan cerpen sejarah di atas! (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Dilema emosional antara kewajiban membela negara dan tanggung jawab menjaga istri serta bayinya yang sedang sakit." },
+      { key: "B", text: "Pergulatan batin memilih antara cinta kasih keluarga dan kesetiaan pada janji patriotik prajurit gerilya." },
+      { key: "C", text: "Pertengkaran fisik antara Sersan Wahyu dan komandan pasukannya di pos markas komando." },
+      { key: "D", text: "Tekanan psikologis menghadapi situasi genting di mana keselamatan tanah air berbenturan dengan kondisi keluarga rapuh." }
+    ],
+    answer: ["A", "B", "D"],
+    explanation: "Pilihan A, B, dan D menganalisis konflik batin (psikologis internal tokoh) yang terbelah antara keluarga dan tugas bangsa. Pilihan C salah karena tidak ada pertengkaran fisik antarprajurit."
+  },
+  {
+    id: 37,
+    category: "Cerpen Sejarah",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Mengidentifikasi nilai sejarah dalam kutipan cerpen",
+    stimulus: "Di bawah temaram lampu teplok di pedalaman desa Karanganyar, para pemuda desa dari berbagai suku bangsa duduk melingkar. Ada pemuda Jawa, Sunda, Madura, dan Minang. Mereka tidak memedulikan perbedaan logat bahasa daerah masing-masing saat menyanyikan lagu Indonesia Raya dengan suara bergetar. Malam itu, di hadapan bendera merah putih yang dijahit tangan oleh para ibu desa, mereka bersumpah sehidup semati mengusir penjajah hingga titik darah penghabisan.",
+    question: "Nilai-nilai sejarah yang terkandung dalam kutipan cerpen sejarah tersebut adalah... (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Nilai persatuan dan kesatuan bangsa tanpa membedakan latar belakang suku bangsa." },
+      { key: "B", text: "Nilai patriotisme dan cinta tanah air yang mendalam terhadap kemerdekaan Republik Indonesia." },
+      { key: "C", text: "Nilai primordialisme sempit yang mengutamakan kepentingan suku sendiri di atas kepentingan nasional." },
+      { key: "D", text: "Nilai kerelaan berkorban jiwa raga demi kedaulatan bangsa dari penjajahan." }
+    ],
+    answer: ["A", "B", "D"],
+    explanation: "Kutipan sarat akan nilai persatuan lintas suku (A), patriotisme cinta tanah air (B), dan rela berkorban (D). Nilai primordialisme sempit (C) bertentangan dengan isi cerita."
+  },
+  {
+    id: 38,
+    category: "Cerpen Sejarah",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Menganalisis penggunaan majas dalam kutipan cerpen",
+    stimulus: "Perhatikan kalimat-kalimat kutipan cerpen berikut:\n(1) Raungan peluru meriam musuh membelah kebisuan malam yang mencekam di tepi benteng.\n(2) Kapten Sudirman adalah benteng karang tempat para prajurit muda bertumpu dan berlindung.\n(3) Pasukan bergerak maju dengan membawa persenjataan senapan laras panjang pada pukul lima pagi.\n(4) Semangat membara para pejuang berkobar laksana lautan api yang tak mampu dipadamkan oleh badai.",
+    question: "Kalimat manakah yang memanfaatkan gaya bahasa (majas) secara puitis untuk membangun suasana cerita? (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Kalimat (1) yang memuat majas personifikasi ('raungan peluru membelah kebisuan')." },
+      { key: "B", text: "Kalimat (2) yang memuat majas metafora ('adalah benteng karang tempat prajurit bertumpu')." },
+      { key: "C", text: "Kalimat (3) yang mendeskripsikan waktu dan persenjataan secara lugas." },
+      { key: "D", text: "Kalimat (4) yang memuat majas simile / asosiasi perumpamaan ('laksana lautan api')." }
+    ],
+    answer: ["A", "B", "D"],
+    explanation: "Kalimat 1 (personifikasi), kalimat 2 (metafora), dan kalimat 4 (simile/asosiasi) adalah kalimat bermajas. Kalimat 3 adalah kalimat denotatif lugas tanpa majas."
+  },
+  {
+    id: 39,
+    category: "Cerpen Sejarah",
+    type: "PGK",
+    level: "C3 (Aplikasi)",
+    kategori_kisi: "LOTS",
+    indikator: "Mengidentifikasi latar tempat, waktu, dan suasana",
+    stimulus: "Gerimis tipis membasahi peron Stasiun Tugu Yogyakarta pada dini hari menjelang subuh bulan Desember 1948. Lampu stasiun padam total untuk menyamarkan kedatangan kereta luar biasa pengangkut rombongan kabinet. Di kejauhan, sayup-sayup terdengar deru mesin pesawat Mustang musuh melintasi langit kelam, menciptakan ketegangan yang membuat setiap pejuang menggenggam erat gagang granat di pinggangnya.",
+    question: "Identifikasi latar (setting) yang akurat berdasarkan kutipan cerpen di atas adalah... (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Latar tempat: Peron Stasiun Tugu Yogyakarta." },
+      { key: "B", text: "Latar waktu: Dini hari menjelang subuh, Desember 1948." },
+      { key: "C", text: "Latar suasana: Riang gembira dan penuh gelak tawa perayaan kemenangan." },
+      { key: "D", text: "Latar suasana: Tegang, genting, dan waspada di tengah ancaman serangan udara musuh." }
+    ],
+    answer: ["A", "B", "D"],
+    explanation: "Latar tempat Stasiun Tugu Yogyakarta (A), waktu dini hari Desember 1948 (B), dan suasana mencekam/tegang di tengah ancaman pesawat tempur musuh (D). Pilihan C keliru."
+  },
+  {
+    id: 40,
+    category: "Teks Argumentasi",
+    type: "PGK",
+    level: "C4 (Menganalisis)",
+    kategori_kisi: "HOTS",
+    indikator: "Mengidentifikasi informasi dan pendapat tentang kearifan lokal dalam ketahanan pangan",
+    stimulus: "Kearifan lokal masyarakat adat nusantara telah terbukti mampu menjaga ketahanan pangan keluarga selama ratusan tahun tanpa bergantung pada pasokan pasar modern. Tradisi lumbung padi tradisional 'Leuit' pada masyarakat Baduy dan Kasepuhan Ciptagelar, misalnya, mampu menyimpan gabah kering hingga puluhan tahun tanpa membusuk berkat sirkulasi udara dan konstruksi kayu yang cerdas. Demikian pula pola tanam tumpang sari 'Subak' di Bali yang mengintegrasikan padi dengan palawija guna mencegah ledakan hama dan menjaga kesuburan tanah. Revitalisasi kearifan lokal ini sangat relevan untuk diadopsi dalam kebijakan ketahanan pangan nasional di era krisis iklim saat ini.",
+    question: "Pernyataan manakah yang sesuai dengan informasi dan pendapat penulis mengenai kearifan lokal dalam ketahanan pangan? (Pilihan jawaban lebih dari satu)",
+    options: [
+      { key: "A", text: "Lumbung tradisional 'Leuit' merupakan bukti kearifan lokal dalam mengawetkan dan menyimpan cadangan pangan untuk jangka panjang." },
+      { key: "B", text: "Sistem tanam tumpang sari pada tradisi Subak membantu menjaga kesuburan tanah dan memutus siklus hama pertanian." },
+      { key: "C", text: "Kearifan lokal pertanian adat sudah usang dan sama sekali tidak relevan diterapkan dalam dunia modern." },
+      { key: "D", text: "Revitalisasi kearifan lokal pangan bernilai strategis sebagai solusi berkelanjutan menghadapi ancaman krisis iklim." }
+    ],
+    answer: ["A", "B", "D"],
+    explanation: "Pernyataan A, B, dan D tepat dan selaras dengan opini serta paparan faktual penulis dalam teks. Pernyataan C bertolak belakang dengan gagasan teks."
+  }
+];
