@@ -271,6 +271,83 @@ body {
   .quiz-grid {
     grid-template-columns: 1fr;
   }
+  .sidebar-nav {
+    position: static;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .top-navbar {
+    padding: 10px 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .nav-brand {
+    justify-content: flex-start;
+  }
+  .subject-switch {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .subject-btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+  .app-container {
+    padding: 12px 14px;
+  }
+  .view-tabs {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .tab-group {
+    width: 100%;
+  }
+  .tab-btn {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+  .mode-control {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  .question-card {
+    padding: 16px;
+  }
+  .stimulus-box {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+  .option-item {
+    padding: 10px 14px;
+  }
+  .option-text {
+    font-size: 0.88rem;
+  }
+  .number-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+  }
+  .num-btn {
+    font-size: 0.8rem;
+  }
+  .quiz-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* KARTU SOAL */
