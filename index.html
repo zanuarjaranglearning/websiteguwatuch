@@ -3,102 +3,446 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Persiapan Ujian Kilat Kelas XI - SKI & Bahasa Indonesia</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Portal Persiapan Ujian Kilat Kelas XI</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-light: #eef2ff;
+      --primary-hover: #4338ca;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 8px 16px -4px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* TOP NAVBAR */
+    .top-navbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 2px 6px rgba(79, 70, 229, 0.25);
+    }
+
+    .brand-text h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .brand-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .subject-switch {
+      display: flex;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: var(--radius-md);
+      gap: 4px;
+      overflow-x: auto;
+    }
+
+    .subject-btn {
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.83rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .subject-btn:hover {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    }
+
+    /* MAIN CONTAINER */
+    .app-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .portal-hero {
+      text-align: center;
+      padding: 28px 16px 20px;
+    }
+
+    .portal-pill {
+      display: inline-block;
+      background: #eef2ff;
+      color: #4f46e5;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      border: 1px solid #c7d2fe;
+    }
+
+    .portal-hero h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .portal-hero p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* GRID DAFTAR PELAJARAN */
+    .section-title-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title-bar h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .portal-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .portal-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #cbd5e1;
+    }
+
+    .card-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .card-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .badge-ski { background: #ecfdf5; color: #047857; }
+    .badge-indo { background: #eef2ff; color: #4338ca; }
+    .badge-fikih { background: #fef3c7; color: #b45309; }
+    .badge-mtk { background: #f3e8ff; color: #7e22ce; }
+
+    .soal-count-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 3px 9px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .portal-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+
+    .portal-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .portal-btn-enter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 11px 16px;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      background: var(--primary);
+      color: white;
+      transition: background 0.2s;
+    }
+
+    .portal-btn-enter:hover {
+      background: var(--primary-hover);
+    }
+
+    .portal-sub-links {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .sub-link-btn {
+      flex: 1;
+      text-align: center;
+      padding: 7px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      background: #f8fafc;
+      color: #475569;
+      border: 1px solid var(--border-color);
+      transition: all 0.15s;
+    }
+
+    .sub-link-btn:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    .tips-box {
+      margin-top: 32px;
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tips-box h3 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    .tips-box ol {
+      padding-left: 20px;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #475569;
+    }
+
+    @media (max-width: 640px) {
+      .top-navbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 12px 16px;
+      }
+      .app-container {
+        padding: 16px;
+      }
+      .portal-hero h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- TOP NAVBAR -->
   <header class="top-navbar">
-    <div class="nav-brand">
+    <a href="index.html" class="nav-brand">
       <div class="brand-badge">CBT XI</div>
       <div class="brand-text">
-        <h1>Portal Persiapan Ujian Kelas XI</h1>
-        <p>Ringkasan Materi Kilat & Bank Soal Sesuai Kisi-Kisi</p>
+        <h1>Portal Belajar & Ujian Kelas XI</h1>
+        <p>Ringkasan Materi & Latihan Soal Sesuai Kisi-Kisi</p>
       </div>
-    </div>
+    </a>
 
-    <div class="nav-actions">
-      <div class="subject-switch">
-        <a href="ski.html" class="subject-btn">🕌 SKI</a>
-        <a href="bahasa-indonesia.html" class="subject-btn">🇮🇩 B. Indonesia</a>
-      </div>
-    </div>
+    <nav class="subject-switch">
+      <a href="ski.html" class="subject-btn">🕌 SKI</a>
+      <a href="bahasa-indonesia.html" class="subject-btn">🇮🇩 B. Indonesia</a>
+      <a href="fikih.html" class="subject-btn">⚖️ Fikih</a>
+      <a href="matematika.html" class="subject-btn">📐 Matematika</a>
+    </nav>
   </header>
 
   <main class="app-container">
-
-    <!-- HERO SECTION -->
     <section class="portal-hero">
-      <div style="display: inline-block; background: #fee2e2; color: #dc2626; padding: 4px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; margin-bottom: 12px;">
-        ⚡ Mode Kilat (Persiapan Ujian 3 Jam Lagi)
-      </div>
-      <h1>Persiapan Ujian Sekolah Kelas XI</h1>
+      <span class="portal-pill">📚 Persiapan Ujian Sekolah Kelas XI</span>
+      <h1>Pilih Mata Pelajaran</h1>
       <p>
-        Dirancang khusus sesuai kisi-kisi resmi. Ringkasan poin penting to-the-point dan 40 latihan soal interaktif lengkap dengan pembahasan langsung.
+        Klik salah satu mata pelajaran di bawah untuk masuk ke halaman materi, mempelajari ringkasan kisi-kisi kilat, dan mengerjakan latihan soal interaktif.
       </p>
     </section>
 
-    <!-- CARDS PILIHAN MAPEL -->
-    <div class="portal-grid">
-
-      <!-- CARD 1: SKI -->
-      <div class="portal-card">
-        <div>
-          <span class="card-badge-top badge-ski">🕌 Sejarah Kebudayaan Islam</span>
-          <h2>SKI Kelas XI</h2>
-          <p>
-            Mencakup 40 butir kisi-kisi: <strong>Daulah Abbasiyah</strong> (pendiri, peradaban, Baitul Hikmah, ilmuwan), <strong>Daulah Usmani</strong> (Muhammad Al-Fatih, Sulaiman Al-Qanuni), <strong>Daulah Safawi</strong> (Tarekat Safawiyah, Isfahan), dan <strong>Daulah Mughal</strong> (Babur, Akbar, Taj Mahal).
-          </p>
-          <div style="font-size: 0.83rem; color: #64748b; margin-bottom: 20px;">
-            📊 <strong>Bentuk Soal:</strong> 30 Pilihan Ganda (PG) + 10 Benar-Salah (B-S)
-          </div>
-        </div>
-
-        <div class="portal-btn-row">
-          <a href="ski.html" class="portal-btn btn-primary-card">🎯 Latihan Soal Interaktif</a>
-          <a href="ski.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="portal-btn btn-secondary-card">📖 Ringkasan Kilat</a>
-        </div>
-      </div>
-
-      <!-- CARD 2: BAHASA INDONESIA -->
-      <div class="portal-card">
-        <div>
-          <span class="card-badge-top badge-indo">🇮🇩 Bahasa Indonesia</span>
-          <h2>Bahasa Indonesia Kelas XI</h2>
-          <p>
-            Mencakup 40 butir kisi-kisi: <strong>Teks Argumentasi</strong> (ide pokok, kalimat persuasif, data pendukung, gotong royong, mangrove, pangan lokal), <strong>Teks Berita</strong> (struktur lead, kaidah fakta, 5W+1H), dan <strong>Cerpen & Cerpen Sejarah</strong> (watak tokoh, majas, nilai patriotisme).
-          </p>
-          <div style="font-size: 0.83rem; color: #64748b; margin-bottom: 20px;">
-            📊 <strong>Bentuk Soal:</strong> 28 Pilihan Ganda (PG) + 12 Pilihan Ganda Kompleks (PGK)
-          </div>
-        </div>
-
-        <div class="portal-btn-row">
-          <a href="bahasa-indonesia.html" class="portal-btn btn-primary-card">🎯 Latihan Soal Interaktif</a>
-          <a href="bahasa-indonesia.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="portal-btn btn-secondary-card">📖 Ringkasan Kilat</a>
-        </div>
-      </div>
-
+    <div class="section-title-bar">
+      <h2>Daftar Mata Pelajaran Tersedia (4 Mapel)</h2>
+      <span style="font-size: 0.82rem; color: var(--text-muted);">Total 155 Soal Latihan</span>
     </div>
 
-    <!-- TIPS BELAJAR CEPAT -->
-    <div style="margin-top: 36px; background: white; border-radius: var(--radius-lg); border: 1px solid var(--border-color); padding: 24px; box-shadow: var(--shadow-sm);">
-      <h3 style="font-size: 1.05rem; margin-bottom: 12px; color: #0f172a; display: flex; align-items: center; gap: 8px;">
-        💡 Tips Belajar Kilat 3 Jam Sebelum Masuk Ruang Ujian:
-      </h3>
-      <ol style="padding-left: 20px; font-size: 0.9rem; line-height: 1.7; color: #475569;">
-        <li><strong>Buka tab "Ringkasan Materi Kilat"</strong>: Baca cepat poin-poin tebal (nama tokoh pendiri, tahun berdirinya daulah, karya buku monumental, struktur teks, dan kata kunci penting). Waktu: ~15 menit per mapel.</li>
-        <li><strong>Gunakan mode "Latihan Langsung"</strong>: Begitu kamu memilih jawaban, sistem akan langsung memberi tahu apakah jawabanmu Benar (hijau) atau Salah (merah) beserta alasan pembahasannya.</li>
-        <li><strong>Perhatikan bagian Pilihan Ganda Kompleks (PGK)</strong> di Bahasa Indonesia (Nomor 29-40): Kamu bisa memilih lebih dari satu jawaban yang benar!</li>
-        <li><strong>Cek Tabel Kilat 1-40</strong> di bagian bawah tab ringkasan untuk mengulang kembali hafalan secara kilat sesaat sebelum ujian dimulai.</li>
+    <div class="portal-grid">
+      <!-- 1. SKI -->
+      <div class="portal-card">
+        <div>
+          <div class="card-header-top">
+            <span class="card-badge-top badge-ski">🕌 SKI</span>
+            <span class="soal-count-tag">40 Soal</span>
+          </div>
+          <h3>Sejarah Kebudayaan Islam</h3>
+          <p>
+            Daulah Abbasiyah, Daulah Usmani, Daulah Safawi di Persia, dan Daulah Mughal di India beserta tokoh dan peninggalannya.
+          </p>
+        </div>
+        <div>
+          <a href="ski.html" class="portal-btn-enter">Buka Pelajaran SKI →</a>
+          <div class="portal-sub-links">
+            <a href="ski.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="sub-link-btn">📖 Ringkasan</a>
+            <a href="ski.html" class="sub-link-btn">🎯 Latihan Soal</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. BAHASA INDONESIA -->
+      <div class="portal-card">
+        <div>
+          <div class="card-header-top">
+            <span class="card-badge-top badge-indo">🇮🇩 B. Indonesia</span>
+            <span class="soal-count-tag">40 Soal</span>
+          </div>
+          <h3>Bahasa Indonesia</h3>
+          <p>
+            Teks Argumentasi (ide pokok, data, pangan lokal, mangrove), Teks Berita (5W+1H, piramida terbalik), dan Cerpen Sejarah.
+          </p>
+        </div>
+        <div>
+          <a href="bahasa-indonesia.html" class="portal-btn-enter">Buka Pelajaran B. Indo →</a>
+          <div class="portal-sub-links">
+            <a href="bahasa-indonesia.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="sub-link-btn">📖 Ringkasan</a>
+            <a href="bahasa-indonesia.html" class="sub-link-btn">🎯 Latihan Soal</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. FIKIH -->
+      <div class="portal-card">
+        <div>
+          <div class="card-header-top">
+            <span class="card-badge-top badge-fikih">⚖️ Fikih</span>
+            <span class="soal-count-tag">40 Soal</span>
+          </div>
+          <h3>Fikih Jinayah & Peradilan</h3>
+          <p>
+            Pembunuhan, Qishash, Diyat, Jarimah Hudud (Zina, Qadzaf, Sariqah, Hirabah, Bughat), Ta'zir, dan Etika Peradilan Islam.
+          </p>
+        </div>
+        <div>
+          <a href="fikih.html" class="portal-btn-enter">Buka Pelajaran Fikih →</a>
+          <div class="portal-sub-links">
+            <a href="fikih.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="sub-link-btn">📖 Ringkasan</a>
+            <a href="fikih.html" class="sub-link-btn">🎯 Latihan Soal</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. MATEMATIKA -->
+      <div class="portal-card">
+        <div>
+          <div class="card-header-top">
+            <span class="card-badge-top badge-mtk">📐 Matematika</span>
+            <span class="soal-count-tag">35 Soal</span>
+          </div>
+          <h3>Matematika Tingkat Lanjut</h3>
+          <p>
+            Transformasi Geometri (Translasi, Refleksi, Rotasi, Dilatasi), Polinomial (Teorema Sisa & Faktor), dan Matriks (Determinan & Invers).
+          </p>
+        </div>
+        <div>
+          <a href="matematika.html" class="portal-btn-enter">Buka Pelajaran Matematika →</a>
+          <div class="portal-sub-links">
+            <a href="matematika.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="sub-link-btn">📖 Ringkasan</a>
+            <a href="matematika.html" class="sub-link-btn">🎯 Latihan Soal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tips-box">
+      <h3>💡 Cara Menggunakan Web Persiapan Ujian:</h3>
+      <ol>
+        <li><strong>Pilih Pelajaran</strong>: Klik pelajaran yang ingin dipelajari dari daftar di atas. Di dalamnya tersedia tab <strong>Ringkasan Materi Kilat</strong> dan <strong>Latihan Soal Interaktif</strong>.</li>
+        <li><strong>Cek Status Benar/Salah Secara Langsung</strong>: Di mode <em>Latihan Langsung</em>, setiap jawaban yang kamu pilih akan langsung menampilkan status <strong>✓ Benar</strong> atau <strong>✗ Salah</strong> di pojok kanan beserta pembahasan tanpa menggeser posisi layar.</li>
+        <li><strong>Simulasi Ujian</strong>: Gunakan mode <em>Simulasi Ujian</em> jika ingin menguji kemampuan tanpa bocoran kunci, lalu klik <strong>Selesai & Nilai</strong> untuk melihat skor akhir.</li>
       </ol>
     </div>
-
   </main>
 
-  <footer style="text-align: center; padding: 30px; font-size: 0.82rem; color: var(--text-muted);">
-    Dibuat khusus untuk persiapan ujian sekolah Kelas XI • Semoga Sukses Ujiannya! 🚀
+  <footer style="text-align: center; padding: 28px; font-size: 0.82rem; color: var(--text-muted);">
+    Portal Persiapan Ujian Kelas XI • Semoga Sukses Ujiannya! 🚀
   </footer>
 
 </body>

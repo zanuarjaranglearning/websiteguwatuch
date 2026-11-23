@@ -1,8 +1,8 @@
-// LOGIKA INTERAKTIF CBT & RINGKASAN MATERI (UNIVERSAL SKI & B. INDONESIA)
+// LOGIKA INTERAKTIF CBT & RINGKASAN MATERI (UNIVERSAL SEMUA MAPEL)
 
 class ExamApp {
   constructor(config) {
-    this.subject = config.subject; // 'SKI' atau 'INDO'
+    this.subject = config.subject; // 'SKI' | 'INDO' | 'FIKIH' | 'MTK'
     this.summaryData = config.summaryData;
     this.questionsData = config.questionsData;
     this.categories = config.categories; // array nama kategori
@@ -33,6 +33,12 @@ class ExamApp {
       if (tabRingkasan) {
         tabRingkasan.click();
       }
+    }
+  }
+
+  triggerMathTypeset() {
+    if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
+      window.MathJax.typesetPromise().catch(() => {});
     }
   }
 
@@ -88,6 +94,7 @@ class ExamApp {
         tabRingkasan.classList.remove("active");
         viewSoal.style.display = "block";
         viewRingkasan.style.display = "none";
+        this.triggerMathTypeset();
       });
 
       tabRingkasan.addEventListener("click", () => {
@@ -96,6 +103,7 @@ class ExamApp {
         tabSoal.classList.remove("active");
         viewSoal.style.display = "none";
         viewRingkasan.style.display = "block";
+        this.triggerMathTypeset();
       });
     }
 
@@ -107,9 +115,7 @@ class ExamApp {
     if (btnPrev) {
       btnPrev.addEventListener("click", () => {
         if (this.currentIndex > 0) {
-          this.currentIndex--;
-          this.renderCurrentQuestion();
-          this.renderQuestionNav();
+          this.goToQuestion(this.currentIndex - 1);
         }
       });
     }
@@ -118,19 +124,19 @@ class ExamApp {
       btnNext.addEventListener("click", () => {
         const list = this.getFilteredQuestions();
         if (this.currentIndex < list.length - 1) {
-          this.currentIndex++;
-          this.renderCurrentQuestion();
-          this.renderQuestionNav();
+          this.goToQuestion(this.currentIndex + 1);
         }
       });
     }
 
     if (btnDoubt) {
       btnDoubt.addEventListener("click", () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const q = this.getCurrentQuestion();
         this.doubtStatus[q.id] = !this.doubtStatus[q.id];
         this.renderCurrentQuestion();
         this.renderQuestionNav();
+        window.scrollTo({ top: currentScroll, behavior: 'instant' });
       });
     }
 
@@ -163,6 +169,16 @@ class ExamApp {
         const keyword = e.target.value.toLowerCase().trim();
         this.filterSummary(keyword);
       });
+    }
+  }
+
+  goToQuestion(idx) {
+    this.currentIndex = idx;
+    this.renderCurrentQuestion();
+    this.renderQuestionNav();
+    const card = document.querySelector('.question-card');
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }
 
@@ -239,9 +255,7 @@ class ExamApp {
       }
 
       btn.addEventListener("click", () => {
-        this.currentIndex = idx;
-        this.renderCurrentQuestion();
-        this.renderQuestionNav();
+        this.goToQuestion(idx);
       });
 
       grid.appendChild(btn);
@@ -279,12 +293,23 @@ class ExamApp {
     if (q.type === "B-S") typeName = "Benar-Salah (B-S)";
     else if (q.type === "PGK") typeName = "Pilihan Ganda Kompleks (PGK)";
 
+    // Tulisan status di pojok kanan header soal
+    let feedbackBadge = "";
+    if (showInstantFeedback) {
+      if (isCorrect) {
+        feedbackBadge = `<span class="badge badge-result-correct">✓ Jawaban Kamu Benar!</span>`;
+      } else {
+        feedbackBadge = `<span class="badge badge-result-wrong">✗ Jawaban Kurang Tepat</span>`;
+      }
+    }
+
     let html = `
       <div class="question-badges">
         <span class="badge badge-number">Soal ${q.id}</span>
         <span class="badge badge-category">${q.category}</span>
         <span class="badge badge-type">${typeName}</span>
         <span class="badge badge-level">Level ${q.level}</span>
+        ${feedbackBadge}
       </div>
 
       <div class="indicator-text">
@@ -298,7 +323,7 @@ class ExamApp {
       <div class="options-list" id="options-group">
     `;
 
-    // Render Options
+    // Render Options dengan Indikator Tulisan Benar / Salah di Pojok Kanan Opsi
     q.options.forEach(opt => {
       let isSelected = false;
       if (q.type === "PGK") {
@@ -308,15 +333,33 @@ class ExamApp {
       }
 
       let extraClass = isSelected ? "selected" : "";
+      let statusBadge = "";
+
       if (showInstantFeedback) {
         if (q.type === "PGK") {
           const isKeyCorrect = q.answer.includes(opt.key);
-          if (isSelected && isKeyCorrect) extraClass += " correct";
-          else if (isSelected && !isKeyCorrect) extraClass += " wrong";
-          else if (!isSelected && isKeyCorrect) extraClass += " correct";
+          if (isSelected && isKeyCorrect) {
+            extraClass += " correct";
+            statusBadge = `<span class="option-status-badge badge-correct">✓ Benar</span>`;
+          } else if (isSelected && !isKeyCorrect) {
+            extraClass += " wrong";
+            statusBadge = `<span class="option-status-badge badge-wrong">✗ Salah</span>`;
+          } else if (!isSelected && isKeyCorrect) {
+            extraClass += " correct-key";
+            statusBadge = `<span class="option-status-badge badge-key">✓ Kunci Jawaban</span>`;
+          }
         } else {
-          if (opt.key === q.answer) extraClass += " correct";
-          else if (isSelected && opt.key !== q.answer) extraClass += " wrong";
+          if (opt.key === q.answer) {
+            extraClass += " correct";
+            if (isSelected) {
+              statusBadge = `<span class="option-status-badge badge-correct">✓ Benar</span>`;
+            } else {
+              statusBadge = `<span class="option-status-badge badge-key">✓ Kunci Jawaban</span>`;
+            }
+          } else if (isSelected && opt.key !== q.answer) {
+            extraClass += " wrong";
+            statusBadge = `<span class="option-status-badge badge-wrong">✗ Jawaban Salah</span>`;
+          }
         }
       }
 
@@ -327,6 +370,7 @@ class ExamApp {
             `<div class="option-key">${opt.key}</div>`
           }
           <div class="option-text">${this.escapeHtml(opt.text)}</div>
+          ${statusBadge}
         </div>
       `;
     });
@@ -336,7 +380,7 @@ class ExamApp {
     // Explanation Box if feedback active
     if (showInstantFeedback) {
       const boxClass = isCorrect ? "show-correct" : "show-wrong";
-      const icon = isCorrect ? "✅ Benar!" : "❌ Perhatikan Pembahasan:";
+      const icon = isCorrect ? "✅ Tepat Sekali!" : "💡 Pembahasan Jawaban:";
       let correctAnswerText = "";
       if (Array.isArray(q.answer)) {
         correctAnswerText = q.answer.join(", ");
@@ -346,7 +390,7 @@ class ExamApp {
 
       html += `
         <div class="explanation-card ${boxClass}">
-          <div class="explanation-title">${icon} <span>Kunci Jawaban: <strong>${correctAnswerText}</strong></span></div>
+          <div class="explanation-title">${icon} <span>Kunci: <strong>[${correctAnswerText}]</strong></span></div>
           <div class="explanation-body">${this.escapeHtml(q.explanation)}</div>
         </div>
       `;
@@ -357,7 +401,7 @@ class ExamApp {
     // Attach Option Click Events
     const optionEls = container.querySelectorAll(".option-item");
     optionEls.forEach(el => {
-      el.addEventListener("click", (e) => {
+      el.addEventListener("click", () => {
         const key = el.getAttribute("data-key");
         this.selectOption(q, key);
       });
@@ -379,9 +423,14 @@ class ExamApp {
         btnDoubt.innerHTML = "⚑ Ragu-ragu";
       }
     }
+
+    this.triggerMathTypeset();
   }
 
   selectOption(question, key) {
+    // Kunci posisi scroll saat ini agar TIDAK melompat / bolak-balik atas-bawah
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
     if (question.type === "PGK") {
       let currentArr = this.userAnswers[question.id] || [];
       if (!Array.isArray(currentArr)) currentArr = [];
@@ -398,6 +447,12 @@ class ExamApp {
     this.renderCurrentQuestion();
     this.renderQuestionNav();
     this.updateCounters();
+
+    // Kembalikan ke posisi scroll awal secara instan (zero jumping!)
+    window.scrollTo({ top: currentScroll, behavior: 'instant' });
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: currentScroll, behavior: 'instant' });
+    });
   }
 
   updateCounters() {
@@ -493,10 +548,10 @@ class ExamApp {
         <div>
           <h2>${this.escapeHtml(this.summaryData.title)}</h2>
           <p style="color: var(--text-muted); font-size: 0.88rem;">
-            Diringkas khusus dari 40 butir kisi-kisi ujian agar bisa dipelajari cepat dalam waktu singkat.
+            Diringkas khusus dari butir-butir kisi-kisi resmi agar bisa dipelajari cepat dalam waktu singkat.
           </p>
         </div>
-        <input type="text" id="summary-search-input" class="summary-search" placeholder="🔍 Cari nama tokoh, buku, konsep, kota...">
+        <input type="text" id="summary-search-input" class="summary-search" placeholder="🔍 Cari nama tokoh, konsep, pasal, rumus...">
       </div>
       <div id="summary-cards-container" style="display: flex; flex-direction: column; gap: 20px;">
     `;
@@ -511,7 +566,6 @@ class ExamApp {
       `;
 
       sec.points.forEach(pt => {
-        // Render simple markdown **bold** and *italic*
         const formatted = pt
           .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
           .replace(/\*(.*?)\*/g, "<em>$1</em>");
@@ -527,10 +581,10 @@ class ExamApp {
     html += `
       </div>
       
-      <!-- Tabel Kilat Jawaban Kisi-Kisi 1-40 -->
+      <!-- Tabel Kilat Jawaban Kisi-Kisi -->
       <div class="kisi-table-box">
         <h3 style="font-size: 1.1rem; color: #0f172a; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-          📋 Tabel Kilat Kisi-Kisi & Kunci Jawaban Lengkap (1 - 40)
+          📋 Tabel Kilat Kisi-Kisi & Kunci Jawaban Lengkap
         </h3>
         <table class="kisi-table">
           <thead>
@@ -539,7 +593,7 @@ class ExamApp {
               <th style="width: 170px;">Materi Pokok</th>
               <th>Indikator Kisi-Kisi</th>
               <th style="width: 70px;">Bentuk</th>
-              <th style="width: 200px;">Kunci & Konsep Utama</th>
+              <th style="width: 220px;">Kunci & Konsep Utama</th>
             </tr>
           </thead>
           <tbody>
@@ -575,6 +629,7 @@ class ExamApp {
     `;
 
     container.innerHTML = html;
+    this.triggerMathTypeset();
   }
 
   filterSummary(keyword) {

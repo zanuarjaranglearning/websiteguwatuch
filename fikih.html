@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelajaran Fikih Kelas XI - Ringkasan & Latihan Soal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="top-navbar">
+    <a href="index.html" class="nav-brand">
+      <div class="brand-badge" style="background: linear-gradient(135deg, #d97706, #f59e0b);">FK</div>
+      <div class="brand-text">
+        <h1>Fikih Kelas XI</h1>
+        <p>40 Soal • Jinayah, Hudud, Ta'zir, & Peradilan Islam</p>
+      </div>
+    </a>
+
+    <div class="nav-actions">
+      <a href="index.html" class="back-home-btn">← Daftar Pelajaran</a>
+      <div class="subject-switch">
+        <a href="ski.html" class="subject-btn">🕌 SKI</a>
+        <a href="bahasa-indonesia.html" class="subject-btn">🇮🇩 B. Indo</a>
+        <a href="fikih.html" class="subject-btn active">⚖️ Fikih</a>
+        <a href="matematika.html" class="subject-btn">📐 MTK</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+    <div class="view-tabs">
+      <div class="tab-group">
+        <button id="tab-soal-btn" class="tab-btn active">🎯 Latihan Soal Interaktif</button>
+        <button id="tab-ringkasan-btn" class="tab-btn">📖 Ringkasan Materi Kilat</button>
+      </div>
+
+      <div class="mode-control">
+        <div class="mode-toggle">
+          <span>Mode:</span>
+          <span id="mode-latihan" class="mode-pill active">Latihan Langsung</span>
+          <span id="mode-ujian" class="mode-pill">Simulasi Ujian</span>
+        </div>
+        <div class="progress-text" id="progress-count">0/40 Terjawab</div>
+        <button id="finish-btn" class="finish-btn"><span>✓</span> Selesai & Nilai</button>
+      </div>
+    </div>
+
+    <div id="view-soal">
+      <div class="filter-bar" id="filter-bar"></div>
+      <div class="quiz-grid">
+        <section class="question-card">
+          <div id="question-container"></div>
+          <div class="quiz-actions">
+            <button id="btn-prev" class="action-btn">← Soal Sebelumnya</button>
+            <button id="btn-doubt" class="action-btn btn-doubt">⚑ Ragu-ragu</button>
+            <button id="btn-next" class="action-btn btn-primary">Soal Selanjutnya →</button>
+          </div>
+        </section>
+
+        <aside class="sidebar-nav">
+          <div class="sidebar-header">
+            <h3>Navigasi Nomor Soal</h3>
+            <button id="reset-btn" class="reset-btn">Reset</button>
+          </div>
+          <div class="nav-legend">
+            <div class="legend-item"><div class="legend-dot dot-green"></div> Benar</div>
+            <div class="legend-item"><div class="legend-dot dot-red"></div> Salah</div>
+            <div class="legend-item"><div class="legend-dot dot-yellow"></div> Ragu-ragu</div>
+            <div class="legend-item"><div class="legend-dot dot-gray"></div> Belum dijawab</div>
+          </div>
+          <div class="number-grid" id="number-grid"></div>
+        </aside>
+      </div>
+    </div>
+
+    <div id="view-ringkasan" style="display: none;">
+      <div class="summary-container" id="summary-content"></div>
+    </div>
+  </main>
+
+  <script src="data-fikih.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      new ExamApp({
+        subject: "FIKIH",
+        summaryData: FIKIH_SUMMARY,
+        questionsData: FIKIH_QUESTIONS,
+        categories: ["Pembunuhan", "Zina", "Qadzaf", "Sariqah", "Hirabah", "Bughat", "Peradilan Islam"]
+      });
+    });
+  </script>
+</body>
+</html>

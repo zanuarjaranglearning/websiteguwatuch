@@ -3,34 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Latihan Soal & Ringkasan Bahasa Indonesia Kelas XI</title>
+  <title>Pelajaran Bahasa Indonesia Kelas XI - Ringkasan & Latihan Soal</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- TOP NAVBAR -->
   <header class="top-navbar">
     <a href="index.html" class="nav-brand">
       <div class="brand-badge" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);">BI</div>
       <div class="brand-text">
-        <h1>Latihan Soal Bahasa Indonesia XI</h1>
+        <h1>Bahasa Indonesia XI</h1>
         <p>40 Soal • Teks Argumentasi, Berita, & Cerpen Sejarah</p>
       </div>
     </a>
 
     <div class="nav-actions">
-      <!-- Switch Mapel -->
+      <a href="index.html" class="back-home-btn">← Daftar Pelajaran</a>
       <div class="subject-switch">
         <a href="ski.html" class="subject-btn">🕌 SKI</a>
-        <a href="bahasa-indonesia.html" class="subject-btn active">🇮🇩 B. Indonesia</a>
+        <a href="bahasa-indonesia.html" class="subject-btn active">🇮🇩 B. Indo</a>
+        <a href="fikih.html" class="subject-btn">⚖️ Fikih</a>
+        <a href="matematika.html" class="subject-btn">📐 MTK</a>
       </div>
     </div>
   </header>
 
-  <!-- MAIN CONTAINER -->
   <main class="app-container">
-
-    <!-- VIEW TABS & MODE TOGGLE -->
     <div class="view-tabs">
       <div class="tab-group">
         <button id="tab-soal-btn" class="tab-btn active">🎯 Latihan Soal Interaktif</button>
@@ -40,32 +38,19 @@
       <div class="mode-control">
         <div class="mode-toggle">
           <span>Mode:</span>
-          <span id="mode-latihan" class="mode-pill active" title="Tampilkan pembahasan langsung setelah memilih jawaban">Latihan Langsung</span>
-          <span id="mode-ujian" class="mode-pill" title="Hitung nilai di akhir ujian">Simulasi Ujian</span>
+          <span id="mode-latihan" class="mode-pill active">Latihan Langsung</span>
+          <span id="mode-ujian" class="mode-pill">Simulasi Ujian</span>
         </div>
         <div class="progress-text" id="progress-count">0/40 Terjawab</div>
-        <button id="finish-btn" class="finish-btn">
-          <span>✓</span> Selesai & Nilai
-        </button>
+        <button id="finish-btn" class="finish-btn"><span>✓</span> Selesai & Nilai</button>
       </div>
     </div>
 
-    <!-- VIEW 1: LATIHAN SOAL CBT -->
     <div id="view-soal">
-      <!-- Kategori Filter Bar -->
-      <div class="filter-bar" id="filter-bar">
-        <!-- Rendered via JavaScript -->
-      </div>
-
-      <!-- CBT Quiz Grid (2 Kolom: Kiri Soal, Kanan Navigasi) -->
+      <div class="filter-bar" id="filter-bar"></div>
       <div class="quiz-grid">
-        <!-- Kolom Kiri: Kartu Soal -->
         <section class="question-card">
-          <div id="question-container">
-            <!-- Rendered via JavaScript -->
-          </div>
-
-          <!-- Tombol Navigasi Bawah -->
+          <div id="question-container"></div>
           <div class="quiz-actions">
             <button id="btn-prev" class="action-btn">← Soal Sebelumnya</button>
             <button id="btn-doubt" class="action-btn btn-doubt">⚑ Ragu-ragu</button>
@@ -73,39 +58,27 @@
           </div>
         </section>
 
-        <!-- Kolom Kanan: Navigasi Nomor Soal -->
         <aside class="sidebar-nav">
           <div class="sidebar-header">
             <h3>Navigasi Nomor Soal</h3>
             <button id="reset-btn" class="reset-btn">Reset</button>
           </div>
-
-          <!-- Legenda -->
           <div class="nav-legend">
             <div class="legend-item"><div class="legend-dot dot-green"></div> Benar</div>
             <div class="legend-item"><div class="legend-dot dot-red"></div> Salah</div>
             <div class="legend-item"><div class="legend-dot dot-yellow"></div> Ragu-ragu</div>
             <div class="legend-item"><div class="legend-dot dot-gray"></div> Belum dijawab</div>
           </div>
-
-          <!-- Grid Nomor 1 - 40 -->
-          <div class="number-grid" id="number-grid">
-            <!-- Rendered via JavaScript -->
-          </div>
+          <div class="number-grid" id="number-grid"></div>
         </aside>
       </div>
     </div>
 
-    <!-- VIEW 2: RINGKASAN MATERI KILAT -->
     <div id="view-ringkasan" style="display: none;">
-      <div class="summary-container" id="summary-content">
-        <!-- Rendered via JavaScript -->
-      </div>
+      <div class="summary-container" id="summary-content"></div>
     </div>
-
   </main>
 
-  <!-- DATA & APP SCRIPTS -->
   <script src="data-indo.js"></script>
   <script src="app.js"></script>
   <script>
