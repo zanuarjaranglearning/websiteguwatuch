@@ -15,7 +15,54 @@ class ExamApp {
     this.examMode = "latihan"; // 'latihan' (instant feedback) | 'ujian' (nilai di akhir)
     this.isSubmitted = false;
 
+    // Penyimpanan lokal: jawaban hanya disimpan di browser siswa (tidak dikirim ke server)
+    this.storageKey = "ujian-kelas-xi-" + this.subject;
+    this.loadProgress();
+
     this.init();
+  }
+
+  // ===== PENYIMPANAN LOKAL (localStorage) =====
+  saveProgress() {
+    try {
+      localStorage.setItem(this.storageKey, JSON.stringify({
+        answers: this.userAnswers,
+        doubt: this.doubtStatus
+      }));
+    } catch (e) {
+      // Penyimpanan diblokir (mis. mode privat): kuis tetap jalan, hanya tidak diingat
+    }
+  }
+
+  loadProgress() {
+    try {
+      const raw = localStorage.getItem(this.storageKey);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      const savedAnswers = (data && data.answers) || {};
+      const savedDoubt = (data && data.doubt) || {};
+
+      // Hanya pulihkan jawaban yang masih cocok dengan soal saat ini
+      this.questionsData.forEach(q => {
+        const keys = q.options.map(o => o.key);
+        const a = savedAnswers[q.id];
+        if (Array.isArray(a)) {
+          const valid = a.filter(k => keys.includes(k));
+          if (q.type === "PGK" && valid.length > 0) this.userAnswers[q.id] = valid;
+        } else if (typeof a === "string" && keys.includes(a) && q.type !== "PGK") {
+          this.userAnswers[q.id] = a;
+        }
+        if (savedDoubt[q.id] === true) this.doubtStatus[q.id] = true;
+      });
+    } catch (e) {
+      // Data rusak atau tidak bisa dibaca: mulai dari awal
+    }
+  }
+
+  clearProgress() {
+    try {
+      localStorage.removeItem(this.storageKey);
+    } catch (e) {}
   }
 
   init() {
@@ -134,6 +181,7 @@ class ExamApp {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const q = this.getCurrentQuestion();
         this.doubtStatus[q.id] = !this.doubtStatus[q.id];
+        this.saveProgress();
         this.renderCurrentQuestion();
         this.renderQuestionNav();
         window.scrollTo({ top: currentScroll, behavior: 'instant' });
@@ -153,6 +201,7 @@ class ExamApp {
         if (confirm("Apakah kamu yakin ingin mereset seluruh jawaban dan mulai lagi?")) {
           this.userAnswers = {};
           this.doubtStatus = {};
+          this.clearProgress();
           this.isSubmitted = false;
           this.currentIndex = 0;
           this.renderCurrentQuestion();
@@ -444,6 +493,7 @@ class ExamApp {
       this.userAnswers[question.id] = key;
     }
 
+    this.saveProgress();
     this.renderCurrentQuestion();
     this.renderQuestionNav();
     this.updateCounters();
