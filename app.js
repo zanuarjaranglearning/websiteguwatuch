@@ -36,6 +36,12 @@ class ExamApp {
     }
   }
 
+  triggerMathTypeset() {
+    if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
+      window.MathJax.typesetPromise().catch(() => {});
+    }
+  }
+
   getFilteredQuestions() {
     return this.questionsData.filter(q => this.isQuestionInFilter(q, this.activeFilter));
   }
@@ -88,6 +94,7 @@ class ExamApp {
         tabRingkasan.classList.remove("active");
         viewSoal.style.display = "block";
         viewRingkasan.style.display = "none";
+        this.triggerMathTypeset();
       });
 
       tabRingkasan.addEventListener("click", () => {
@@ -96,6 +103,7 @@ class ExamApp {
         tabSoal.classList.remove("active");
         viewSoal.style.display = "none";
         viewRingkasan.style.display = "block";
+        this.triggerMathTypeset();
       });
     }
 
@@ -123,10 +131,12 @@ class ExamApp {
 
     if (btnDoubt) {
       btnDoubt.addEventListener("click", () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const q = this.getCurrentQuestion();
         this.doubtStatus[q.id] = !this.doubtStatus[q.id];
         this.renderCurrentQuestion();
         this.renderQuestionNav();
+        window.scrollTo({ top: currentScroll, behavior: 'instant' });
       });
     }
 
@@ -283,6 +293,7 @@ class ExamApp {
     if (q.type === "B-S") typeName = "Benar-Salah (B-S)";
     else if (q.type === "PGK") typeName = "Pilihan Ganda Kompleks (PGK)";
 
+    // Tulisan status di pojok kanan header soal
     let feedbackBadge = "";
     if (showInstantFeedback) {
       if (isCorrect) {
@@ -312,7 +323,7 @@ class ExamApp {
       <div class="options-list" id="options-group">
     `;
 
-    // Render Options
+    // Render Options dengan Indikator Tulisan Benar / Salah di Pojok Kanan Opsi
     q.options.forEach(opt => {
       let isSelected = false;
       if (q.type === "PGK") {
@@ -347,7 +358,7 @@ class ExamApp {
             }
           } else if (isSelected && opt.key !== q.answer) {
             extraClass += " wrong";
-            statusBadge = `<span class="option-status-badge badge-wrong">✗ Jawaban Kamu Salah</span>`;
+            statusBadge = `<span class="option-status-badge badge-wrong">✗ Jawaban Salah</span>`;
           }
         }
       }
@@ -412,10 +423,12 @@ class ExamApp {
         btnDoubt.innerHTML = "⚑ Ragu-ragu";
       }
     }
+
+    this.triggerMathTypeset();
   }
 
   selectOption(question, key) {
-    // Kunci posisi scroll saat ini agar TIDAK jumping / bolak-balik atas-bawah
+    // Kunci posisi scroll saat ini agar TIDAK melompat / bolak-balik atas-bawah
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
     if (question.type === "PGK") {
@@ -437,6 +450,9 @@ class ExamApp {
 
     // Kembalikan ke posisi scroll awal secara instan (zero jumping!)
     window.scrollTo({ top: currentScroll, behavior: 'instant' });
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: currentScroll, behavior: 'instant' });
+    });
   }
 
   updateCounters() {
@@ -535,7 +551,7 @@ class ExamApp {
             Diringkas khusus dari butir-butir kisi-kisi resmi agar bisa dipelajari cepat dalam waktu singkat.
           </p>
         </div>
-        <input type="text" id="summary-search-input" class="summary-search" placeholder="🔍 Cari nama tokoh, buku, konsep, pasal, rumus...">
+        <input type="text" id="summary-search-input" class="summary-search" placeholder="🔍 Cari nama tokoh, konsep, pasal, rumus...">
       </div>
       <div id="summary-cards-container" style="display: flex; flex-direction: column; gap: 20px;">
     `;
@@ -550,7 +566,6 @@ class ExamApp {
       `;
 
       sec.points.forEach(pt => {
-        // Render simple markdown **bold** and *italic*
         const formatted = pt
           .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
           .replace(/\*(.*?)\*/g, "<em>$1</em>");
@@ -614,6 +629,7 @@ class ExamApp {
     `;
 
     container.innerHTML = html;
+    this.triggerMathTypeset();
   }
 
   filterSummary(keyword) {
