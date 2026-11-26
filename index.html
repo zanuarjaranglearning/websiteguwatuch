@@ -205,6 +205,7 @@
     .badge-indo { background: #eef2ff; color: #4338ca; }
     .badge-fikih { background: #fef3c7; color: #b45309; }
     .badge-mtk { background: #f3e8ff; color: #7e22ce; }
+    .badge-mtkw { background: #ccfbf1; color: #0f766e; }
 
     .soal-count-tag {
       font-size: 0.78rem;
@@ -327,7 +328,8 @@
       <a href="ski.html" class="subject-btn">🕌 SKI</a>
       <a href="bahasa-indonesia.html" class="subject-btn">🇮🇩 B. Indonesia</a>
       <a href="fikih.html" class="subject-btn">⚖️ Fikih</a>
-      <a href="matematika.html" class="subject-btn">📐 Matematika</a>
+      <a href="matematika.html" class="subject-btn">📐 Mat. Lanjut</a>
+      <a href="matematika-wajib.html" class="subject-btn">🧮 Mat. Wajib</a>
     </nav>
   </header>
 
@@ -341,8 +343,8 @@
     </section>
 
     <div class="section-title-bar">
-      <h2>Daftar Mata Pelajaran Tersedia (4 Mapel)</h2>
-      <span style="font-size: 0.82rem; color: var(--text-muted);">Total 155 Soal Latihan</span>
+      <h2>Daftar Mata Pelajaran Tersedia (5 Mapel)</h2>
+      <span style="font-size: 0.82rem; color: var(--text-muted);">Total 190 Soal Latihan</span>
     </div>
 
     <div class="portal-grid">
@@ -413,7 +415,7 @@
       <div class="portal-card">
         <div>
           <div class="card-header-top">
-            <span class="card-badge-top badge-mtk">📐 Matematika</span>
+            <span class="card-badge-top badge-mtk">📐 Mat. Lanjut</span>
             <span class="soal-count-tag">35 Soal</span>
           </div>
           <h3>Matematika Tingkat Lanjut</h3>
@@ -426,6 +428,27 @@
           <div class="portal-sub-links">
             <a href="matematika.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="sub-link-btn">📖 Ringkasan</a>
             <a href="matematika.html" class="sub-link-btn">🎯 Latihan Soal</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. MATEMATIKA WAJIB -->
+      <div class="portal-card">
+        <div>
+          <div class="card-header-top">
+            <span class="card-badge-top badge-mtkw">🧮 Mat. Wajib</span>
+            <span class="soal-count-tag">35 Soal</span>
+          </div>
+          <h3>Matematika Wajib</h3>
+          <p>
+            Barisan & Deret (aritmetika dan geometri), Matematika Keuangan (bunga, diskonto, rente, anuitas), dan Transformasi Fungsi (translasi & refleksi).
+          </p>
+        </div>
+        <div>
+          <a href="matematika-wajib.html" class="portal-btn-enter">Buka Pelajaran Mat. Wajib →</a>
+          <div class="portal-sub-links">
+            <a href="matematika-wajib.html#ringkasan" onclick="sessionStorage.setItem('openTab', 'ringkasan')" class="sub-link-btn">📖 Ringkasan</a>
+            <a href="matematika-wajib.html" class="sub-link-btn">🎯 Latihan Soal</a>
           </div>
         </div>
       </div>
